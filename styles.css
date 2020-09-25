@@ -1,0 +1,31 @@
+html {
+    background-color: #FFE7C9
+}
+
+
+body {
+    color: #000000;
+    /*font-family: "Computer Modern Serif", Arial,'Times New Roman', sans-serif;*/
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #FFDBAC;
+    padding: 0 20px 20px 20px;
+    border: 1px solid black;
+}
+
+dt {
+    font-style: normal;
+    font-weight: 700
+}
+
+a:link {
+    color: #FF0000;
+}
+
+a:visited {
+    color: #FF0000;
+}
+
+
+dl {
+}
