@@ -34,7 +34,7 @@ def parcours_prefixe(a):
         parcours_prefixe(a.droite)
 
 def parcours_postfixe(a):
-    "affiche les noeuds de a en suivant un parcours postfixe (gauche, droite, valeur)"""
+    """affiche les noeuds de a en suivant un parcours postfixe (gauche, droite, valeur)"""
     if not(a is None) :
         parcours_postfixe(a.gauche)
         parcours_postfixe(a.droite)
