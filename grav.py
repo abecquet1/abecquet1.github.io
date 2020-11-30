@@ -6,7 +6,7 @@ from random import *
 
 #Constants
 H = 1050
-W = 1680
+W = H#1680
 GLOBAL_SCALE = 1/6400000000
 PLANET_SCALE = 1
 SLEEP = 1
@@ -95,6 +95,7 @@ root = Tk()
 root.title("Gravitation")
 can = Canvas(root, height = H, width = W, bg= 'black')
 
+
 if BACKGROUND_STARS:
     color = ['red', 'orange', 'yellow', 'white', 'SteelBlue1', 'blue']
     for i in range(1000):
@@ -129,6 +130,7 @@ def planet_zoom(event):
         PLANET_SCALE /=1.5
 
 def reset_planet_zoom(event):
+    
     global PLANET_SCALE
     PLANET_SCALE = 1
             
@@ -162,7 +164,44 @@ def deplacement():
     solar_system.move(DT)    
     root.after(SLEEP,deplacement)
 
-can.pack()
+
+
+liste = Listbox(root)
+for i in range(len(solar_system.planet_list)):
+    liste.insert(i+1, solar_system.planet_list[i].name)
+
+def clic_liste(event):
+    i=liste.curselection()
+    name = liste.get(i)
+    for p in solar_system.planet_list:
+        if p.name==name:
+            solar_system.p_ref = p
+            break
+
+    
+liste.bind('<ButtonRelease-1>',clic_liste)
+
+
+def recupere():
+    global DT
+    DT = int(entree.get())
+
+value = IntVar() 
+value.set(3600)
+entree = Entry(root, textvariable=value, width=30)
+
+bouton = Button(root, text="Valider", command=recupere)
+
+
+can.grid(row = 0, column = 0, rowspan = 80)
+Label(text = "Unit of time (s):").grid(row = 0, column = 1)
+entree.grid(row = 1, column = 1)
+bouton.grid(row = 2, column = 1)
+
+Label(text = "Planet Frame:").grid(row = 5, column = 1)
+liste.grid(row = 6, column = 1)
+
+
 deplacement()
 root.mainloop()
 
