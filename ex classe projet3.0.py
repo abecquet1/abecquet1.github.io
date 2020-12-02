@@ -1,23 +1,15 @@
+#modules
 from math import *
 from tkinter import *
 from random import *
 
 
-
 #Constants
 H = 1050
-W = H#1680
-GLOBAL_SCALE = 1/6400000000
-PLANET_SCALE = 1
-SLEEP = 1
-VERBOSE = False
+W = 1050 
 G = 6.67430e-11
-DT = 3600 #3600s = 1h
-BACKGROUND_STARS = False
 
-
-
-#Planet class
+#planet class
 class Planet:
     def __init__(self, name, mass, radius, color, x, y, vx, vy):
         """planets have coordinates in a fixed inertial frame"""
@@ -41,10 +33,6 @@ class Planet:
         """make the planet move according to its velocity vector """
         self.x = self.x+self.vx*dt
         self.y = self.y+self.vy*dt
-        #if VERBOSE:
-        #    self.can.coords(self.text, W/2+(self.x+self.radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(self.y+self.radius*PLANET_SCALE)*GLOBAL_SCALE)
-        #self.can.coords(self.picture, W/2+(self.x-self.radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(self.y-self.radius*PLANET_SCALE)*GLOBAL_SCALE,W/2+(self.x+self.radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(self.y+self.radius*PLANET_SCALE)*GLOBAL_SCALE)
-        #self.can.move(self.picture, self.vx*dt*GLOBAL_SCALE, self.vy*dt*GLOBAL_SCALE)
         
     def field(self,x,y):
         """returns the gravitationnal field of the planet""" 
@@ -55,6 +43,160 @@ class Planet:
         gy = -(y-self.y)*G*self.mass/d**3
         return gx, gy
 
+
+#planetary system class (also a tk canvas) 
+class System(Canvas):
+    def __init__(self, root, h, w, back, p_ref):
+        Canvas.__init__(self, root, height = h, width = w, bg = back)
+        self.planet_list = []
+        self.picture = {}
+        self.p_ref = p_ref
+        self.centerx = 0
+        self.centery = 0
+        self.dt = 3600
+        self.bind('<MouseWheel>', self.global_zoom)
+        self.bind('<Button-1>', self.move_frame)
+        self.bind('<Button-2>', self.reset_global_zoom)
+        self.bind('<Button-3>', self.reset_frame)
+        self.bind('<Shift-MouseWheel>', self.planet_zoom)
+        self.bind('<Shift-Button-2>', self.reset_planet_zoom)
+        self.grid(row = 0, column = 0, rowspan = 80)
+        self.global_scale = 1/6400000000
+        self.planet_scale = 1
+        self.background_star_list = []
+            
+    def create_background_stars(self):
+        color = ['red', 'orange', 'yellow', 'white', 'SteelBlue1', 'blue']
+        for i in range(1000):
+            x = randint(0, W)
+            y = randint(0, H)
+            star = self.create_oval(x,y,x+1,y+1, fill=choice(color))
+            self.tag_lower(star)
+            self.background_star_list.append(star)
+            
+
+    def delete_background_stars(self):
+        for bgs in self.background_star_list:
+            self.delete(bgs)
+        self.background_star_list = []
+
+    def create_planet(self, p):
+        self.planet_list.append(p)
+        x = p.x
+        y = p.y
+        radius = p.radius
+        gs = self.global_scale = 1/6400000000
+        ps = self.planet_scale = 1
+        self.picture[p]=self.create_oval(W/2+(x-radius*ps)*gs, H/2+(y-radius*ps)*gs,W/2+(x+radius*ps)*gs, H/2+(y+radius*ps)*gs, fill = p.color)
+            
+    
+    def field(self,x,y):
+        """return the gravitational fied of the system"""
+        gx = 0
+        gy = 0
+        for p in self.planet_list:
+            gx+=p.field(x,y)[0]
+            gy+=p.field(x,y)[1]
+        return gx,gy
+
+    def move(self):
+        """move each planet in the system according to its field"""
+        gs = self.global_scale
+        ps = self.planet_scale
+        for p in self.planet_list:
+            p.accelerate(self.dt, self.field(p.x,p.y))
+        for p in self.planet_list:
+            p.move(self.dt)
+            self.coords(self.picture[p], W/2+(p.x-p.radius*ps)*gs, H/2+(p.y-p.radius*ps)*gs,W/2+(p.x+p.radius*ps)*gs, H/2+(p.y+p.radius*ps)*gs)    
+        for p in self.planet_list:
+            Canvas.move(self,self.picture[p], -self.p_ref.x*gs-self.centerx, -self.p_ref.y*gs-self.centery)
+
+
+    def move_frame(self, event):
+        self.centerx += event.x-W/2
+        self.centery += event.y-H/2
+
+    def reset_frame(self, event):
+        self.centerx = 0
+        self.centery = 0
+
+    def global_zoom(self, event):
+        if event.delta>0:
+            self.global_scale *=1.5
+        else:
+            self.global_scale /=1.5
+
+    def reset_global_zoom(self, event):
+        self.global_scale = 1/6400000000
+
+    def planet_zoom(self, event):
+        if event.delta>0:
+            self.planet_scale *=1.5
+        else:
+            self.planet_scale /=1.5
+
+    def reset_planet_zoom(self, event):
+        self.planet_scale = 1
+
+
+
+#parameters (also a tk frame)
+class Parameters(Frame):
+    def __init__(self, root, h, w, bg, system):
+        Canvas.__init__(self, root, height = h, width = w, bg= bg)
+        self.system = system
+        
+        #tk variables
+        self.dt = IntVar()
+        self.dt.set(3600)
+        self.bgs = IntVar()
+        self.bgs.set(1)
+        
+        #tk widgets
+        self.dt_entry = Entry(root, textvariable=self.dt, width=30)
+        self.dt_button = Button(root, text="OK", command=self.dt_get)
+        self.p_ref_list = Listbox(root)
+        for i in range(len(system.planet_list)):
+            self.p_ref_list.insert(i+1, system.planet_list[i].name)
+        self.bgs_box = Checkbutton(root, text="Background stars", variable=self.bgs)
+
+        #tk labels
+        Label(text = "Unit of time (s):").grid(row = 0, column = 1)
+        Label(text = "Planet Frame:").grid(row = 5, column = 1)
+
+        #tk labels and positionning
+        self.dt_entry.grid(row = 1, column = 1)
+        self.dt_button.grid(row = 2, column = 1)
+        self.p_ref_list.grid(row = 6, column = 1)
+        self.bgs_box.grid(row=8, column = 1)
+
+        #binding
+        self.p_ref_list.bind('<ButtonRelease-1>',self.p_ref_get)
+        self.bgs_box.bind('<ButtonRelease-1>',self.bgs_get)
+
+
+    def p_ref_get(self, event):
+        i=self.p_ref_list.curselection()
+        name = self.p_ref_list.get(i)
+        for p in self.system.planet_list:
+            if p.name==name:
+                self.system.p_ref = p
+                break
+
+    def bgs_get(self, event):
+        b = int(self.bgs.get())
+        if b == 0:
+            self.system.create_background_stars()
+        else:
+            self.system.delete_background_stars()
+            
+    def dt_get(self):
+        self.system.dt = int(self.dt_entry.get())
+
+
+        
+
+#MAIN
 
 #planets creation
 sun = Planet("Sun", 2e30, 696342000, 'yellow', 0,0,0,0)
@@ -68,154 +210,23 @@ saturn = Planet("Saturn", 568e24, 60268000, 'khaki2', 1475500000000, 0, 0, 9640)
 uranus = Planet("Uranus", 8.7e25, 25559000, 'DarkSlateGray1',   3008000000000, 0, 0, 6800)
 neptune = Planet("Neptune", 1e26, 24764000, 'SkyBlue3',   4500000000000, 0, 0, 5430)
 
-
-
-class System(Canvas):
-    def __init__(self, p_ref):
-        Canvas.__init__(self, root, height = H, width = W, bg= 'black')
-        self.planet_list = []
-        self.picture = {}
-        #if VERBOSE:
-            #    self.text = can.create_text(W/2+(x+radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(y+radius*PLANET_SCALE)*GLOBAL_SCALE, text=name, fill = 'gray')
-        self.p_ref = p_ref
-        self.centerx = 0
-        self.centery = 0
-
-    def create_planet(self, p):
-        self.planet_list.append(p)
-        x = p.x
-        y = p.y
-        radius = p.radius
-        self.picture[p]=self.create_oval(W/2+(x-radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(y-radius*PLANET_SCALE)*GLOBAL_SCALE,W/2+(x+radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(y+radius*PLANET_SCALE)*GLOBAL_SCALE, fill = p.color)
-            
-    
-    def field(self,x,y):
-        """return the gravitational fied of the system"""
-        gx = 0
-        gy = 0
-        for p in self.planet_list:
-            gx+=p.field(x,y)[0]
-            gy+=p.field(x,y)[1]
-        return gx,gy
-
-    def move(self, dt):
-        """move each planet in the system according to its field""" 
-        for p in self.planet_list:
-            p.accelerate(dt, self.field(p.x,p.y))
-        for p in self.planet_list:
-            p.move(dt)
-            self.coords(self.picture[p], W/2+(p.x-p.radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(p.y-p.radius*PLANET_SCALE)*GLOBAL_SCALE,W/2+(p.x+p.radius*PLANET_SCALE)*GLOBAL_SCALE, H/2+(p.y+p.radius*PLANET_SCALE)*GLOBAL_SCALE)    
-        for p in self.planet_list:
-            Canvas.move(self,self.picture[p], -self.p_ref.x*GLOBAL_SCALE-self.centerx, -self.p_ref.y*GLOBAL_SCALE-self.centery)
-            #if VERBOSE:
-            #    p.can.move(p.text, -self.p_ref.x*GLOBAL_SCALE-self.centerx, -self.p_ref.y*GLOBAL_SCALE-self.centery)
-
-
-
-#Tkinter initialisation and bindings
+#Tkinter initialisation
 root = Tk()
 root.title("Gravitation")
 
-solar_system = System(sun)
+#solar_system
+solar_system = System(root, H, W, 'black', sun)
 for p in [sun, mercury, venus, earth, moon, mars, jupiter, saturn, uranus, neptune]:
     solar_system.create_planet(p)
+solar_system.create_background_stars()
 
-if BACKGROUND_STARS:
-    color = ['red', 'orange', 'yellow', 'white', 'SteelBlue1', 'blue']
-    for i in range(1000):
-        x = randint(0, W)
-        y = randint(0, H)
-        solar_system.create_oval(x,y,x+1,y+1, fill=choice(color))
+#parameters
+parameters = Parameters(root, H, 630, 'gray', solar_system)
 
-def move_frame(event):
-    solar_system.centerx += event.x-W/2
-    solar_system.centery += event.y-H/2
-
-def reset_frame(event):
-    solar_system.centerx = 0
-    solar_system.centery = 0
-
-def global_zoom(event):
-    global GLOBAL_SCALE
-    if event.delta>0:
-        GLOBAL_SCALE *=1.5
-    else:
-        GLOBAL_SCALE /=1.5
-
-def reset_global_zoom(event):
-    global GLOBAL_SCALE
-    GLOBAL_SCALE = 1/6400000000
-
-def planet_zoom(event):
-    global PLANET_SCALE
-    if event.delta>0:
-        PLANET_SCALE *=1.5
-    else:
-        PLANET_SCALE /=1.5
-
-def reset_planet_zoom(event):
-    global PLANET_SCALE
-    PLANET_SCALE = 1
-
-
-
-
-            
-solar_system.bind('<MouseWheel>', global_zoom)
-solar_system.bind('<Button-1>', move_frame)
-solar_system.bind('<Button-2>', reset_global_zoom)
-solar_system.bind('<Button-3>', reset_frame)
-solar_system.bind('<Shift-MouseWheel>', planet_zoom)
-solar_system.bind('<Shift-Button-2>', reset_planet_zoom)
-
-
-
-
-
-
-
-#main
+#mainloop
 def deplacement(): 
-    solar_system.move(DT)    
-    root.after(SLEEP,deplacement)
-
-
-
-liste = Listbox(root)
-for i in range(len(solar_system.planet_list)):
-    liste.insert(i+1, solar_system.planet_list[i].name)
-
-def clic_liste(event):
-    i=liste.curselection()
-    name = liste.get(i)
-    for p in solar_system.planet_list:
-        if p.name==name:
-            solar_system.p_ref = p
-            break
-
-    
-liste.bind('<ButtonRelease-1>',clic_liste)
-
-
-def recupere():
-    global DT
-    DT = int(entree.get())
-
-value = IntVar() 
-value.set(3600)
-entree = Entry(root, textvariable=value, width=30)
-
-bouton = Button(root, text="Valider", command=recupere)
-
-
-solar_system.grid(row = 0, column = 0, rowspan = 80)
-Label(text = "Unit of time (s):").grid(row = 0, column = 1)
-entree.grid(row = 1, column = 1)
-bouton.grid(row = 2, column = 1)
-
-Label(text = "Planet Frame:").grid(row = 5, column = 1)
-liste.grid(row = 6, column = 1)
-
+    solar_system.move()    
+    root.after(1,deplacement)
 
 deplacement()
 root.mainloop()
