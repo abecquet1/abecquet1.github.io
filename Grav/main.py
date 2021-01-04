@@ -17,7 +17,7 @@ for i in range(len(tab)):
     tab[i] = tab[i].split(',')
 
 
-for i in range(1,34):
+for i in range(1,51):
     name = tab[i][1]
     print("Adding "+name, end = ', ')
     mass = float(tab[i][4])
@@ -43,7 +43,7 @@ for i in range(1,34):
     elif i == 37:
         i_ref = 35
     elif i == 39:
-        i_ref = 27
+        i_ref = 37
     else:
         i_ref = 0
         

@@ -151,7 +151,7 @@ class Parameters(Frame):
         self.dt = IntVar()
         self.dt.set(3600)
         self.bgs = IntVar()
-        self.bgs.set(1)
+        self.bgs.set(0)
         
         #tk widgets
         self.dt_entry = Entry(root, textvariable=self.dt, width=30)
