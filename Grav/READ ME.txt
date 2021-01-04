@@ -62,3 +62,4 @@ MAIN.PY
 
 Le fichier main.py récupère les données du fichier ss.csv comportant les caractéristiques d'objets du système solaire (source : wikipedia https://fr.wikipedia.org/wiki/Liste_d%27objets_du_Syst%C3%A8me_solaire)
 Puis il génère pour chaque objet hors soleil une position initiale aléatoire autour de son objet parent et calcule une vitesse initiale correspondant à l'excentricité des trajectoires (chaque objet commence à son periastre)
+Il lance enfin la simulation
