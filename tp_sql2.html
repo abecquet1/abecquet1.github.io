@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>1G NSI - Projet 1</title>
+    <meta name="author" content="Antoine Becquet">
+    <meta name="description" content="NSI - TP SQL">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1 id="hdp">TP requêtes SQL</h1>
+
+    Dans ce TP, on apprends à se servir des commandes SQL permettant de réalis à consulter sans modération. 
+	
+    <h2>Import des données et Relations</h2>
+	
+	<p>
+    Télécharger <a href="https://www.nsi-terminale.fr/files/data/livres.sql">le fichier suivant</a> et l'exécuter dans votre SGBD (vous pouvez vous aider du premier TP pour vous rappeler comment on fait).
+	
+	Une fois l'import terminé, lire les premières lignes du fichier et en déduire les relations définies dans cette base (bien identifier les clés primaires et étrangères).
+	
+	</p>
+
+    <h2>SELECT</h2>
+
+    L'instruction SELECT permet d'afficher toute ou une partie des données présentes dans une ou plusieures relations d'une base de données. Elle est utilisée conjointement avec l'instruction FROM et parfois avec l'instruction WHERE. Plus de détails <a href = "https://sql.sh/cours/select"> ici </a> puis <a href = "https://sql.sh/cours/where"> là </a>
+	
+	Tester des requêtes SELECT dans la base de données importée : 
+	
+	<ul>
+		<li>afficher le titre de tous les livres de la médiathèque ;</li>
+		<li>afficher l'isbn des livres empruntés de la bibliothèques ;</li>
+		<li>afficher le titre et l'année de parution de tous les livres parus entre 1970 et 1980 ;</li>
+		<li>afficher toutes les données des livres parus après 1990.</li>		
+	</ul>
+	
+	<h2>Fonctions d'agrégation</h2>
+
+    Les instructions COUNT, SUM, AVG, MIN, MAX permettent via SELECT de calculer le nombre, la somme, la moyenne le minimum, le maximum d'un certain sous ensemble de données. Plus de détails <a href = "https://sql.sh/fonctions/agregation"> ici </a> (ignorer la partie sur GROUP BY).
+	
+	<ul>
+		<li>afficher le nombre total de livres ;</li>
+		<li>afficher le nombre total de livres empruntés ;</li>
+		<li>afficher le nombre total de livres parus après 1990 ;</li>
+		<li>afficher la moyenne des dates de parution des livres ;</li>
+		<li>afficher l'année de parution la plus ancienne ;</li>
+		
+	</ul>
+	
+	<h2>Doublon et tri</h2>
+	
+	Dans une requête SELECT, il est possible de ne pas afficher les doublons d'un certain attribut grâce à l'instruction <a href = "https://sql.sh/cours/distinct"> DISTINCT </a>. Il est aussi possible de déterminer un certain ordre d'affichage via l'instruction <a href = "https://sql.sh/cours/order-by">ORDER BY</a>.
+
+	<ul>
+		<li>afficher toutes les années de parution sans doublon;</li>
+		<li>afficher l'isbn de tous les livres empruntés triés par ISBN ;</li>
+		<li>afficher l'isbn et la date d'emprunt de tous les livres empruntés, triés par date d'emprunt ;</li>
+	</ul>
+	
+	<h2>Jointures</h2>
+	
+	La jointure permet de créer (le temps d'une requête) une table contenant des données provenant de plusieurs autres tables lorsque celles-ci disposent d'un attribut commun. Plus de détail <a href = "https://sql.sh/cours/jointures">ici</a> (ne pas faire attention au différents types de jointure, on n'utilisera que l'instruction JOIN). En fusionnant deux tables selon un certain attribut, on peut afficher des données de manière plus complètes. Par exemple, fusioner les tables emprunt et livre permet d'afficher le titre des livres empruntés et non seulement l'ISBN.
+
+	
+	<ul>
+		<li>afficher toutes les données de la jointure des tables livres et emprunt (attribut commun : isbn);</li>
+		<li>afficher le nom de chaque personne ayant un emprunt en cours (dans quelles tables se trouvent ces info ?);</li>
+	</ul>
+	
+	
+	
+
+	
+	
+    <footer>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#hdp">Retour haut de page</a></li>
+            <li><a href="1gnsi.html"> Retour NSI</a></li>
+            <li><a href="index.html">Retour Antoine Becquet</a></li>
+        </ul>
+
+
+    </footer>
+
+</body>
+</html>
