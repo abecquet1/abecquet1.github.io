@@ -73,6 +73,49 @@
 	</ul>
 	
 	
+		
+<h2>Requêtes imbiquées et alias</h2>
+
+Si à première vue l'instruction SELECT sert à afficher des données, son fonctionnement permet de constriure des commandes dites imbriquées. En effet, le résultat d'une requête SELECT est une table, il est donc possible de remplacer dans les syntaxes précédentes n'importe quelle table par une telle requête. 
+
+	
+<ul>
+	<li>afficher les titres des livres les plus anciens (date d'édition minimum) ;</li>
+	<li>afficher les titres des livres empruntés et édités avant 2000 ;</li>
+	<li>afficher les titres des livres parus la même année que 'Moby Dick'.</li>
+</ul>
+
+Il est parfois utile dans une requête imbriquée de donner un nom (alias) au résultat d'un SELECT. Pour cela, on utilise l'instruction <a href = "https://sql.sh/cours/alias">AS</a>.
+
+<ul>
+	<li>afficher, en utilisant des requêtes imbriquées et un alias, les données des livres parus entre 1990 et 2000.</li>
+</ul>
+	
+
+
+<h2>Modification des données</h2>
+
+<h3>Suppression de lignes</h3>
+
+On peut supprimer une ou plusieurs ligne via l'instruction <a href = "https://sql.sh/cours/delete">DELETE</a>.
+
+<ul>
+	<li>supprimer de la table emprunt tous les livres d'un utilisateur donné</li>
+	<li>supprimer de la table usager tous les utilisateurs dont le code postal est '75001' ou '75002'</li>
+</ul>
+
+	
+<h3>Mise à jour</h3>
+
+La commande <a href = "https://sql.sh/cours/update">UPDATE</a> permet de modifier une ou plusieurs lignes ou colonne d'une table.
+
+<ul>
+	<li>modifier l'email de l'utilisateur de code barre '934701281931582' en 'spetit@hmail.com'.</li>
+	<li>ajouter 30 jours à la date de rendu de tous les livres empruntés (remarque : on a le droit comme en python d'écrire x = x+1 dans un SET).</li>
+</ul>
+
+	
+	
 	
 
 	
