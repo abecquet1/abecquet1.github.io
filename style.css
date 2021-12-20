@@ -1,0 +1,446 @@
+/*   Corps    */
+
+
+#block_page
+{
+	width: 900px;
+	margin:auto;
+}
+
+body
+{
+	background-color: #002240;
+    font-family: 'Calibri' ;
+    color: #181818;
+}
+
+#block_page
+{
+    background-color: #d5d6d2;
+    width: 1200px;
+    margin: auto;
+	box-shadow: 0px 4px 4px #1c1a19;
+}
+
+
+
+
+
+/*  Header  */
+
+
+
+header
+{
+	display: inline-block;
+	width: 1150px;
+	padding: 10px;
+}
+
+header h1
+{
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+#logo, header h1
+{
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+header h2
+{
+    font-size: 1.1em;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+
+
+
+/*	Menu  */
+
+
+
+
+#menu, #menu ul     
+{
+    padding : 0;
+    margin : 0;
+    list-style : none; 
+    line-height : 60px; 
+    text-align : center; 
+}
+
+
+
+#menu
+{
+	z-index: 30;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	left: 16px;
+	top: 5px;
+	width: 1150px;
+    font-weight : bold;
+    font-size : 30px; 
+	clear:left;
+}
+
+#menu a
+{
+    display : block; 
+    padding : 0; 
+    background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.8);        
+    color : #fff; 
+    text-decoration : none;
+    width : 382px; 
+}
+
+#menu li     
+{ 
+    float : left; 
+    border-right : 1px solid #fff; 
+}
+
+html>body #menu li
+{
+    border-right: 1px solid transparent ;
+}
+
+#menu li ul
+{ 
+    position: relative;
+    width: 200px;
+    left: -999em; 
+}
+
+
+#menu li ul li 
+{   
+    border-top : 1px solid #fff; 
+}
+
+html>body #menu li ul li                
+{
+    border-top : 1px solid transparent; 
+}
+
+#menu li ul ul 
+{
+    margin    : -22px 0 0 144px ;
+    border-left     : 1px solid #fff ;    
+}
+
+html>body #menu li ul ul                
+{
+    border-left     : 1px solid transparent ;
+}
+
+#menu a:hover
+{
+    color: #000;
+    background: #ffffff; 
+}
+
+#menu li:hover ul ul, #menu li.sfhover ul ul 
+{
+    left: -999em; 
+}
+
+#menu li:hover ul, #menu li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul  
+{
+    left: auto; 
+    min-height: 0; 
+}
+
+
+
+
+/*   	Bannière		*/
+
+
+
+
+#banniere_image
+{
+	z-index: 10;
+	position: relative;
+	top:-10px;
+	left: 25px;
+    margin-top: 15px;
+    height: 342px;
+    border-radius: 5px;
+    background: url('img/ban_index.png') no-repeat;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+	width: 1150px
+}
+
+
+#banniere_image_acces
+{
+	z-index: 10;
+	position: relative;
+	top:-10px;
+	left: 25px;
+    margin-top: 15px;
+    height: 342px;
+    border-radius: 5px;
+    background: url('img/world.jpg') no-repeat;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+	width: 1150px
+}
+
+#banniere_image_ev
+{
+	z-index: 10;
+	position: relative;
+	top:-10px;
+	left: 25px;
+    margin-top: 15px;
+    height: 342px;
+    border-radius: 5px;
+    background: url('img/glouton.jpg') no-repeat;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+	width: 850px
+}
+
+#banniere_image_imm
+{
+	z-index: 10;
+	position: relative;
+	top:-10px;
+	left: 25px;
+    margin-top: 15px;
+    height: 342px;
+    border-radius: 5px;
+    background: url('img/aigle.jpg') no-repeat;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+	width: 1150px
+}
+
+#banniere_image_photo
+{
+	z-index: 10;
+	position: relative;
+
+	top:-10px;
+	left: 25px;
+    margin-top: 15px;
+    height: 342px;
+    border-radius: 5px;
+    background: url('img/photo.jpg') no-repeat;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+	width: 850px
+}
+
+#banniere_image_liens
+{
+	z-index: 10;
+	position: relative;
+
+	top:-10px;
+	left: 25px;
+    margin-top: 15px;
+    height: 342px;
+    border-radius: 5px;
+    background: url('img/liens.jpg') no-repeat;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+	width: 1150px
+}
+
+#banniere_description
+{
+	position:absolute;
+	bottom:0px;
+    border-radius: 0px 0px 5px 5px;
+    width: 1146px;
+    height: 33px;
+    padding-top: 15px;
+    padding-left: 4px;
+	margin-top: auto;
+	margin-bottom: auto;
+    background-color: rgb(24,24,24);
+    background-color: rgba(24,24,24,0.8);
+    color: white;
+    font-size: 0.8em;
+}
+
+#banniere_description p
+{ 
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#banniere_description a
+{
+	color:white;
+}
+
+#banniere_description a:hover
+{
+	text-decoration:white
+}
+
+
+
+/*   Reste   */
+
+
+
+article, aside
+{
+    text-align: justify;
+}
+
+article
+{
+	margin: 25px;
+	margin-top:5px;
+	margin-bottom:5px;
+	padding: 10px;
+}
+
+article a
+{
+	color: blue;
+}
+
+article a:hover
+{
+	text-decoration:none;
+}
+
+article p
+{
+    font-size: 0.8em;
+}
+
+aside
+{
+	float:right;
+    width: 250px;
+	position:relative;
+	right:10px;
+    background-color: rgb(24,24,24);
+    background-color: rgba(24,24,24,0.8);
+    box-shadow: 0px 2px 5px #1c1a19;
+    border-radius: 5px;
+    padding: 10px;
+	margin: 10px;
+	margin-left:30px;
+    color: white;
+    font-size: 0.9em;
+}
+
+table
+{
+	text-align: right;
+    border-collapse: collapse;
+    font-size : 0.8em
+}
+td, th 
+{
+    border: 2px solid black;
+}
+
+
+footer
+{
+	position: relative;
+	left: 15px;
+	bottom: 10px;
+	color: white;
+	display: inline-block;
+	vertical-align: top;
+	margin: auto;
+	margin-top : 40px;
+	width: 1150px;
+	font-size: 0.8em;
+    background-color: rgb(24,24,24);
+    background-color: rgba(24,24,24,0.8);
+	padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+aside img
+{
+	border-radius: 5px;
+    box-shadow: 0px 4px 4px #1c1a19;
+	position: relative;
+	left: 10px;
+}
+
+footer a
+{
+color:white;
+font-weight: normal;
+}
+
+footer a:hover
+{
+text-decoration:none
+}
+
+section h1, footer h1, #menu a
+{
+    font-weight: normal;
+}
+
+section
+{
+position: relative;
+top: 0px;
+min-height: 450px;
+}
+
+figure img
+{
+	border-radius: 5px;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.block_lien
+{
+	display: inline-block;
+	width: 84px;
+	vertical-align: top;
+}
+
+#titre_section
+{
+	position: relative;
+	left: 40px;
+}
+
+#liens
+{
+	left: 15px;
+	bottom: 10px;
+	font-size:0.8em;
+	display: inline-block;
+	vertical-align: top;
+	margin: auto;
+	width: 1150px;
+	padding: 10px;
+}
+
+#liens a 
+{
+color:black;
+}
+
+#liens a:hover
+{
+text-decoration:none;
+}
