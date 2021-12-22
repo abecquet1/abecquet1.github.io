@@ -33,7 +33,7 @@ article{
 .theme {
   text-align: left;
   min-height:auto;
-  margin 50 px;
+  margin 50px;
   margin-left: 150px;
   margin-right: 150px;
   
@@ -80,7 +80,7 @@ article{
 
   grid-template-columns: repeat(10, 1fr);
   gap: 1px;
-  grid-auto-rows: minmax(30px, auto);
+  grid-auto-rows: minmax(auto);
 }
 .nord {
   z-index: 50;

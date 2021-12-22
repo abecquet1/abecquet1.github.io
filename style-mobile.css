@@ -1,0 +1,441 @@
+body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  html{
+    font: 1.0em "Calibri" ;
+  }
+  
+  body
+  {
+    background-color: #002240;
+    color: white;
+    height:100%;
+    min-height: 100%;
+    width: 100%;
+  
+    font-family: 'Calibri' ;
+    color: #181818;
+  }
+  
+  article{
+    margin: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+    padding: 15px;
+  }
+  
+  
+  
+  .theme {
+    text-align: left;
+    min-height:auto;
+    margin: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    
+    padding: 15px;
+  }
+  
+  .tuile  {
+    height: 280px;
+    display: inline-block;
+    width: 200px;
+    margin: 5px;
+    padding: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px #1c1a19;
+  }
+  
+  .tuile:hover{
+    box-shadow: 4px 4px cornflowerblue;
+  }
+  
+  .titre_tuile
+  {
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+    width: 200px;
+    height: 33px;
+    background-color: rgba(24,24,24,0.8);
+    color: white;
+    font-size: 0.8em;
+  }
+  
+  .tuile:hover .titre_tuile{
+    background-color: white;
+    color: black;
+  }
+  
+  
+  
+  
+  .wrapper {
+    display: grid;
+  
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1px;
+    grid-auto-rows: minmax(auto);
+  }
+  .nord {
+    z-index: 50;
+    background-color: cornflowerblue;
+    color: black;
+    grid-column: 1;
+    grid-row: 1;
+    box-shadow: 0px 2px 2px #888;
+  }
+
+  
+  .centre{
+    background-color: #002240;
+    color: white;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .sud {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  
+  
+  
+  
+  
+  main{
+    /*positionnement*/
+    float: left;
+    position: relative;
+    left: 0;
+    top: 61px;
+    width: 100%;
+    min-height: 100vh;
+  
+  
+  
+    /*background-color: white;*/
+  
+  }
+  
+  
+  
+  
+  footer
+  {
+    /*positionnement*/
+    position: relative;
+  
+    height: 30px;
+  
+    /*couleurs*/
+      color: white;
+    background-color: rgba(25,24,24,0.8);
+  
+    padding: 20px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*	Menu  */
+  
+  
+  
+  *
+  
+  nav   
+  {
+    display: block;
+    font-weight: bold;
+    padding : 10px;
+    text-align : center;
+    font-size : 1em; 
+    box-shadow: 1px, 1px, gray;  
+    height: 35px;
+  }
+  
+  nav a
+  {
+  
+    display: inline-block;
+    text-align: center;
+    padding: 0.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    height: 1.2em;
+    color : black; 
+    text-decoration : none;
+    border-radius: 30px;
+  }
+  
+  nav a:hover
+  {
+      color: #000;
+      background: #ddd; 
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #pnsip1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsip2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsip3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #pnsip4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  #pnsip5
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsip6
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsip7
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #pnsip8
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  #pnsip9
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  
+  
+    
+    
+  #pnsia1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsia2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsia3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }#pnsia4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  
+  
+  
+  #pnsit1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsit2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsit3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #pnsit4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  
+  
+  
+  #pnsiard1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsiard2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsiard3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #pnsiard4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  #pnsiard5
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  
+  
+  
+  
+  #pnsisr1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsisr2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsisr3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #pnsisr4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  #pnsisr5
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #pnsisr6
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #pnsisr7
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  
+  
+  
+  
+  #tnsip1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #tnsip2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #tnsip3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #tnsip4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  
+    
+    
+  #tnsia1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #tnsia2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #tnsia3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #tnsia4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  #tnsia5
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #tnsia6
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #tnsia7
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #tnsia8
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  #tnsia9
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #tnsia10
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #tnsia11
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  
+  
+  
+  
+  #tnsibd1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #tnsibd2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #tnsibd3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #tnsibd4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  
+  
+  
+  #tnsiasr1
+  {
+    background: url(img/test/tnsia1.jpg);
+  }
+  #tnsiasr2
+  {
+    background: url(img/test/tnsia2.jpg);
+  }
+  #tnsiasr3
+  {
+    background: url(img/test/tnsia3.jpg);
+  }
+  #tnsiasr4
+  {
+    background: url(img/test/tnsia4.jpg);
+  }
+  
