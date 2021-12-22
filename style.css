@@ -56,13 +56,14 @@ article{
 
 .titre_tuile
 {
+  display: table-cell; 
+  vertical-align: middle;
   text-align: center;
   border-radius: 5px 5px 0px 0px;
   width: 200px;
   height: 33px;
   background-color: rgba(24,24,24,0.8);
   color: white;
-  padding-top: 15px;
   font-size: 0.8em;
 }
 
