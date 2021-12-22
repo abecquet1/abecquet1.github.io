@@ -3,34 +3,51 @@
 
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" media="width <= 480px" href="style.css" />
-		<link rel="stylesheet" media="481px <= width" href="style-mobile.css" />
-				
+		<link rel="stylesheet" href="style.css" />
         <title>Informatique CSI SGP</title>
-
     </head>
 
 	<body>
 
 	<div class= "wrapper">
 
+		<div class="nord-ouest">
+			&emsp;
+		</div>
 
-		<div class = "nord">
-			<nav>
-				<a href="index.html">Informatique CSI SGP</a>
-				<a href="1gnsi.html">Première NSI</a>
+
+		<div class="nord-nord-ouest">
+			<a id = "icone" href="index.html"><img src="img/icone_sgp.png" width=50px style = "vertical-align: middle" > &nbsp; <b>Informatique CSI SGP</b></a>
+		</div>
+
+
+		<div class = "nord-nord-est">
+				<a href="outils.html">Outils</a>  &emsp;
+				<a href="1gnsi.html">Première NSI</a>  &emsp;	
 				<a href="tgnsi.html">Terminale NSI</a>
-			</nav>
+		</div>
+
+		<div class="nord-est">
+			&emsp;
 		</div>
 				
 				
 		<div class="centre">
 
-			<div class="theme">
+			<article>
 					
 				<h1>Programmation (P)</h1>
 			
+				Le chapitre P1 -- Récursivité -- traite des fonction récursives, c'est à dire des fonctions qui s'appellent elles-mêmes, <b>il est fondamental dans la compréhention de nombreux autres chapitres.</b>
+				Le chapitre P2 -- Modularité -- montre comment découper ses programmes en plusieurs fichier correctements (interfaces, réalisation, encapsulation). 
+				Le chapitre P3 -- Programmation orientée objet -- présente la programmation orientée objet (POO). Il s'agît d'une méthode de programmation dans laquelle on donne aux variables (objets) des attributs et des méthodes leur permettant se distinguer et d'intéragir avec le reste du programme. 
+				Le chapitre P4 -- Conception de programmes -- s'attarde sur les bonnes pratiques de la conception de programmes (typage, tests et invariants).
 
+			</article>
+
+			<div class="theme">
+
+				
 				
 				<a href="Fichiers/TNSI/P1.pdf" , target="_blank">	
 				<div class = "tuile" id="tnsip1">
@@ -68,18 +85,21 @@
 				</a>
 
 			</div>
+
+
+			<article>
+				<h1>Algorithmique (A)</h1>
+				Les chapitres A1 à A7 introduisent diverses <b>structures de données</b> (listes chaînées, piles, files, arbres binaires, graphes) et détaillent certains algorithmes leur étant associés. 
+				Les chapitres A8 -- Diviser pour régner -- et A9 -- Programmation dynamique -- présentent des méthodes algorithmiques générales pouvant être utilisées pour résoudre divers problèmes.  
+				Le chapitre A10 -- Recherche textuelle -- étudie l'algoritghme de Bayer-Moore pour rechercher un motif dans un texte. 
+				Le chapitre A11 -- Calculabilité -- est une introduction à la théorie de la calculabilité visant à définir formellement ce qu'est un algorithme, théorie aux fondements de l'informatique. 
+	
+				</article>
 				
 
 			<div class= "theme">
 				
-				
-				
-			<h1>Algorithmique (A)</h1>
-
-
-
-				
-				
+			
 			<a href="Fichiers/TNSI/A1.pdf" , target="_blank">
 				<div class = "tuile" id="tnsia1">
 					<div class = "titre_tuile">
@@ -185,11 +205,24 @@
 
 
 			
+	
+				
+				
+				
+				
+
+			
+				<article>
+
+					<h1>Bases de données (BD)</h1>
+				Les bases de données sont des collections de données structurées en tableaux. 
+				Le chapitre BD1 -- Modèle relationnel -- détaille le modèle théorique qui soutend les bases de données informatiques aujourd'hui.
+				Le chapitre BD2 -- Prise en main de SQL -- présente le langage SQL, prncipal langag permettant de manipuler des bases de données (ajout, suppression).
+				Le chapitre BD3 -- Requêtes SQL -- montre comment intéroger une base de donnée pour en extraire des informations spécifiques. 
+				Le chapitre BD4 -- Système de gestion de base de données -- décrit l'ensemble des services assurés par les systèmes de gestion de base de données (SGBD). 
+			</article>
+
 			<div class= "theme">
-				
-				
-				
-				<h1>Bases de données (BD)</h1>
 			
 				
 			<a href="Fichiers/TNSI/BD1.pdf" , target="_blank">
@@ -235,14 +268,24 @@
 			</div>
 		
 
-				
+			<article>
+			<h1>Architecture, système et réseaux (ARD)</h1>
+
+				Le chapitre ASR1 -- Circuits intégrés -- présente l'architecture et l'utilisation des circuits intégrés, puces pouvant contenir tous les composants d'un ordinateur classique dans un volume très restreint. 
+				Le chapitre ASR2 -- Processus et ressource -- détaile comment les systèmes d'exploitation réussissent à faire tourner (au moins en apparence) plusieurs programmes en même temps et comment il arbitre entre eux l'attribution des ressources disponibles. 
+				Le chapitre ASR3 -- Protocoles de routage -- présente le fonctionnement général du routage sur un réseau et détaille le foncionnement des protocole RIP et OSPF.
+				Le chapitre ASR4 -- Sécurisation des communications -- montre comment on permet à un message de transiter sur un réseau de sorte à ne pouvoir être lu que par son destinataire.
+
+			</article>
 
 
 			<div class= "theme">
+
+
 				
 				
 				
-				<h1>Architecture, système et réseaux (ARD)</h1>
+				
 				
 	
 
@@ -280,7 +323,7 @@
 						
 				<div class = "tuile" id="tnsiasr4">
 					<div class = "titre_tuile">
-						ASR4 - Sécurisation des échanges
+						ASR4 - Sécurisation des communications
 					</div>
 				</div>
 			</a>
