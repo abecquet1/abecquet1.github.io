@@ -5,6 +5,8 @@ body {
 }
 
 
+
+
 body
 {
   /*Par défaut sur la page*/
@@ -12,6 +14,14 @@ body
   font: 1.0em "Calibri" ;
   /*couleur de fond bleu IDLE*/
   background-color: #002240;
+}
+
+
+@media all and (max-device-width: 480px)
+{
+    body{
+      background-color: blueviolet;
+    }
 }
 
 
