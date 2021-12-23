@@ -341,10 +341,14 @@ footer img{
 /*SMARTPHONE SEUL*/
 @media screen and (max-device-width: 480px){
 
+  article{
+    text-align: left;
+  }
+
   .nord-nord-est{ 
     /*augmentation de la taille*/
     font-size: 2em;
-    padding-top: 18px;
+    padding-top: 25px;
   }
 
   .nord-nord-ouest{
@@ -364,6 +368,8 @@ footer img{
   .nord-nord-ouest img{
     width: 100px;
   }
+
+
 }
 
 
