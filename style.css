@@ -334,19 +334,28 @@ footer img{
 
 @media screen and (max-device-width: 480px){
 
+
 .nord-nord-est{
+
   grid-column: 2/11;
   font-size: 2em;
-  padding-top: 16px;
+  padding-top: 15px;
 }
 
 .nord-nord-ouest{
   grid-column: 1/2;
-  height: 150px 
+  height: 100px;
+  min-width:100px;
 }
 
 .nord-nord-ouest img{
-  width: 150px;
+  width: 100px;
+}
+
+.nord-nord-ouest a{
+  font-size: 1.5em;
+  height: 100px;
+  width: 100px;
 }
 }
 
