@@ -17,12 +17,6 @@ body
 }
 
 
-@media all and (max-device-width: 480px)
-{
-    body{
-      background-color: blueviolet;
-    }
-}
 
 
 article{
@@ -45,6 +39,11 @@ article{
   margin-right: 150px;
   padding: 15px;
 }
+
+
+
+
+
 
 .theme a {
   text-decoration: none;
@@ -255,6 +254,54 @@ footer
 }
 
 
+
+
+
+
+
+
+
+@media all and (max-device-width: 480px)
+{
+    
+body{
+  background-color: blueviolet;
+}
+
+.wrapper{
+  margin:0;
+}
+
+.theme {
+  margin:0;
+}
+
+.nord-est{
+  display: none;
+}
+
+.nord-ouest{
+  display: none
+}
+
+.nord-nord-ouest{
+  grid-column: 1/6;
+}
+
+.nord-nord-est{
+  grid-column: 5/11;
+}
+
+.centre{
+  background-color: chartreuse;
+  grid-column: 1/11;
+}
+
+article{
+  margin: 0;
+}
+
+}
 
 
 
