@@ -329,10 +329,25 @@ footer img{
 }
 
 
+}
 
 
+@media screen and (max-device-width: 480px){
 
+.nord-nord-est{
+  grid-column: 2/11;
+  font-size: 1.2em;
+  padding-top: 16px;
+}
 
+.nord-nord-ouest{
+  grid-column: 1/2;
+  height: 100px 
+}
+
+.nord-nord-ouest img{
+  width: 100px;
+}
 }
 
 
