@@ -1,3 +1,24 @@
+/*variables CSS*/
+
+*{
+  --couleur-fond: #002240;
+  --couleur-texte: white;
+  --couleur-nav: cornflowerblue;
+  --couleur-texte-nav: black;
+  --couleur-ombres: grey;
+}
+
+
+*{
+  --couleur-fond: white;
+  --couleur-texte: black;
+  --couleur-nav: cornflowerblue;
+  --couleur-texte-nav: black;
+  --couleur-ombres: grey;
+}
+
+
+
 /*PARAMETRES PAR DEFAUT*/
 body
 {
@@ -5,12 +26,13 @@ body
   font: 1.0em "Calibri" ;
 
   /*couleur de fond*/
-  background-color: #002240;
-  color: white;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
 
   /*supprime les marges par défaut*/
   padding: 0;
   margin: 0;
+  min-height: 100vh;
 }
 
 
@@ -24,6 +46,7 @@ body
   grid-template-columns: repeat(10, 1fr);
   gap: 0px;
   grid-auto-rows: minmax(auto);
+
 }
 .nord-ouest{
   /*positionnement*/
@@ -32,9 +55,9 @@ body
   z-index: 50;
 
   /*couleurs*/
-  background-color: cornflowerblue;
-  color: black;
-  box-shadow: 0px 2px black;
+  background-color: var(--couleur-nav);
+  color: var(--couleur-texte-nav);
+  box-shadow: 0px 2px var(--couleur-ombres);
 }
 .nord-nord-ouest {
   /*positionnement*/
@@ -47,9 +70,9 @@ body
   text-align: left;
 
   /*couleurs*/
-  background-color: cornflowerblue;
-  color: black;
-  box-shadow:  0px 2px black;
+  background-color: var(--couleur-nav);
+  color: var(--couleur-texte-nav);
+  box-shadow: 0px 2px var(--couleur-ombres);
 }
 .nord-nord-est {
   /*positionnement*/
@@ -63,9 +86,9 @@ body
   padding-top: 10px;
 
   /*couleurs*/
-  background-color: cornflowerblue;
-  color: black;
-  box-shadow:  0px 2px black;
+  background-color: var(--couleur-nav);
+  color: var(--couleur-texte-nav);
+  box-shadow: 0px 2px var(--couleur-ombres);
 }
 .nord-est{
   /*positionnement*/
@@ -74,9 +97,9 @@ body
   z-index: 50;
 
   /*couleurs*/
-  background-color: cornflowerblue;
-  color: black;
-  box-shadow: 0px 2px black;
+  background-color: var(--couleur-nav);
+  color: var(--couleur-texte-nav);
+  box-shadow: 0px 2px var(--couleur-ombres);
 }
 .ouest {
   /*positionnement*/
@@ -122,6 +145,12 @@ article{
   padding-top: 0px;
 }
 
+article img{
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 4px 4px var(--couleur-ombres);
+}
+
 
 /*GESTION DES TUILES*/
 .theme {
@@ -154,12 +183,12 @@ article{
 
   /*couleur*/
   padding: 0px;
-  box-shadow: 4px 4px black;
+  box-shadow: 4px 4px var(--couleur-ombres);
 }
 
 .tuile:hover{
   /*changement de couleur de l'ombre en hover*/
-  box-shadow: 4px 4px cornflowerblue;
+  box-shadow: 4px 4px var(--couleur-nav);
 }
 
 .titre_tuile
@@ -180,7 +209,7 @@ article{
 
   /*couleur*/
   background-color: rgba(24,24,24,0.8);
-  color: white;
+  color: white ;
 }
 
 .tuile:hover .titre_tuile{
@@ -205,7 +234,7 @@ article{
   text-align: center;
 
   /*pour éviter changement de couleur lien visité et le soulignage*/
-  color: black;
+  color: var(--couleur-texte-nav);
   text-decoration : none;
 }
 
@@ -231,8 +260,8 @@ article{
 .nord-nord-est a:hover, .nord-nord-ouest a:hover
 {
   /*inversion couleurse hover*/
-  color: #000;
-  background: #ddd; 
+  color: black;
+  background: white; 
 }
 
 
@@ -250,8 +279,7 @@ footer
   height: 30px;
 
   /*couleurs*/
-	color: white;
-  background-color: rgba(25,24,24,0.8);
+  background-color: rgba(24,24,24,0.8);
 
   padding: 20px;
 }
