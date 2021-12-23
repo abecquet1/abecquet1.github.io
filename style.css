@@ -301,13 +301,21 @@ footer img{
     width: 60px;
   }
 
-
   .nord-nord-est{
     grid-column: 2/11;
     font-size: 0.8em;
     padding-top: 18px;
   }
 
+  .nord-nord-ouest a{
+    font-size: 1.5em;
+    height: 60px;
+    width: 60px;
+  }
+
+  .nord-nord-ouest b{
+    display: none;
+  }
   .centre{
     grid-column: 1/11;
   }
@@ -325,15 +333,7 @@ footer img{
     width: 64px;
   }
 
-  .nord-nord-ouest a{
-    font-size: 1.5em;
-    height: 60px;
-    width: 60px;
-  }
 
-  .nord-nord-ouest b{
-    display: none;
-  }
 
 }
 
@@ -357,6 +357,11 @@ footer img{
     /*augmentation de la taille*/
     font-size: 1.5em;
     height: 100px;
+    width: 100px;
+  }
+
+  
+  .nord-nord-ouest img{
     width: 100px;
   }
 }
