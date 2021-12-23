@@ -336,17 +336,17 @@ footer img{
 
 .nord-nord-est{
   grid-column: 2/11;
-  font-size: 1.2em;
+  font-size: 2em;
   padding-top: 16px;
 }
 
 .nord-nord-ouest{
   grid-column: 1/2;
-  height: 100px 
+  height: 150px 
 }
 
 .nord-nord-ouest img{
-  width: 100px;
+  width: 150px;
 }
 }
 
