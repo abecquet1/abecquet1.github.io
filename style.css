@@ -45,7 +45,7 @@ body
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 0px;
-  grid-auto-rows: minmax(auto);
+
 
 }
 .nord-ouest{
@@ -161,6 +161,7 @@ article img{
   margin-right: auto;
   margin-top: 15px;
   margin-bottom: 15px;
+  text-align: center;
 
   /*disposition interne*/
   padding: 15px;
@@ -174,9 +175,9 @@ article img{
 .tuile  {
   /*positionnement*/
   margin: 4px;
-  height: 315px;
+  height: 300px;
   display: inline-block;
-  width: 220px;
+  width: 300px;
 
   /*arrondis*/
   border-radius: 5px;
@@ -194,7 +195,7 @@ article img{
 .titre_tuile
 {
   /*positionnement*/
-  width: 220px;
+  width: 300px;
   height: 40px;
 
   /*pour centrer verticalement*/
@@ -265,7 +266,7 @@ article img{
   background: white; 
 }
 
-.nord-nord-ouest:hover img{
+.nord-nord-ouest a:hover img{
   filter: invert();
 }
 
