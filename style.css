@@ -154,8 +154,8 @@ article{
   max-width: 950px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
 
   /*style de texte*/
@@ -200,7 +200,7 @@ article img{
   text-align: center;
 
   /*disposition interne*/
-  padding: 15px;
+  padding: 0px;
 }
 
 .theme a {
@@ -214,7 +214,7 @@ article img{
   height: 300px;
   display: inline-block;
   width: 300px;
-
+  margin: 5px;
   /*arrondis*/
   border-radius:21px;
 
@@ -247,6 +247,8 @@ article img{
   /*couleur*/
   background-color: rgba(255,0,0,0.8);
   color: white ;
+
+  font-size: 1.2em;
 }
 
 .tuile:hover .titre_tuile{
