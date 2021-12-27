@@ -365,34 +365,28 @@ footer img{
 /*SMARTPHONE SEUL*/
 @media screen and (max-device-width: 480px){
 
-  article{
-    text-align: left;
-  }
-
-  .nord-nord-est{ 
-    /*augmentation de la taille*/
-    font-size: 2em;
-    padding-top: 25px;
-  }
-
   .nord-nord-ouest{
-    /*augmentation de la taille*/
-    height: 100px;
-    min-width:100px;
+    padding-left: auto;
+    text-align: left;
+    padding-right: 0px;
+    grid-column: 1/2;
   }
 
   .nord-nord-ouest a{
-    /*augmentation de la taille*/
-    font-size: 1.5em;
-    height: 100px;
-    width: 100px;
+    width: auto;
   }
 
-  
-  .nord-nord-ouest img{
-    width: 100px;
+  .nord-nord-ouest b{
+    display: none;
   }
 
+  .nord-nord-est{
+
+    text-align: right;
+    padding-left: 0px;
+    grid-column: 2/11;
+    font-size: 0.8em;
+  }
 
 }
 
