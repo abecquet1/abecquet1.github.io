@@ -309,7 +309,7 @@ footer img{
 
 
 /* SMARTPHONE OU ZOOM IMPPORTANT*/
-@media screen and (max-width:950px)
+@media (max-device-width: 480px), screen and (max-width:950px)
 {
   .nord-nord-ouest{
 
@@ -329,7 +329,7 @@ footer img{
 }
 
 
-@media screen and (max-width:750px)
+@media (max-device-width: 480px), screen and (max-width:750px)
 {
   .nord-nord-ouest{
     padding-left: auto;
@@ -363,7 +363,7 @@ footer img{
 
 
 /*SMARTPHONE SEUL*/
-@media screen and (max-device-width: 480px){
+@media (max-device-width: 480px){
 
   .nord-nord-ouest{
     padding-left: auto;
@@ -381,7 +381,7 @@ footer img{
   }
 
   .nord-nord-est{
-
+    font-size: 1.2em;
     text-align: right;
     padding-left: 0px;
     grid-column: 2/11;
