@@ -46,6 +46,7 @@ body
   /*tout est inclus dans une grille*/
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 70px auto;
   gap: 0px;
 
 
@@ -55,6 +56,9 @@ body
   grid-row: 1;
   grid-column: 1/3;
   z-index: 50;
+  position: fixed;
+  top: 0;
+
 
   /*couleurs*/
   background-color: var(--couleur-nav);
@@ -66,6 +70,11 @@ body
   grid-row: 1;
   grid-column: 1/6;
   z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  height: 50px;
+  width: 50%;
 
 
   /*disposition*/
@@ -82,7 +91,13 @@ body
   /*positionnement*/
   grid-row: 1;
   grid-column: 6/11;
-  z-index: 50;
+  z-index: 49;  
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 40px;
+  width: 50%;
+
 
   /*disposition*/
   display: inline-block;
@@ -246,6 +261,7 @@ article img{
 
 
 /*HAUT DE PAGE (NORD)*/
+
 
 .nord-nord-est a, .nord-nord-ouest a{
   /*tous les liens dans le nav*/
