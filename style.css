@@ -67,8 +67,7 @@ body
 
   /*disposition*/
   display: inline-block;
-  text-align: right;
-  padding-right: 185px;
+  text-align: left;
 
   /*couleurs*/
   background-color: var(--couleur-nav);
@@ -83,10 +82,8 @@ body
 
   /*disposition*/
   display: inline-block;
-  text-align: left;
+  text-align: right;
   padding-top: 12px;
-  padding-left: 135px;
-  font-size: 0.8em;
 
   /*couleurs*/
   background-color: var(--couleur-nav);
@@ -175,7 +172,6 @@ article img{
   width: 300px;
 
   /*arrondis*/
-  border: 1px solid ;
   border-radius:21px;
 
   /*couleur*/
@@ -322,7 +318,6 @@ footer img{
     grid-column: 5/11;
     text-align: right;
     padding-left: 0px;
-    font-size: 0.8em;
   }
 
 
@@ -351,7 +346,6 @@ footer img{
     text-align: right;
     padding-left: 0px;
     grid-column: 2/11;
-    font-size: 0.8em;
   }
 
 }
@@ -381,12 +375,7 @@ footer img{
   }
 
   .nord-nord-est{
-    font-size: 30px;
-    background-color: burlywood;
-    text-align: right;
-    padding-left: 0px;
     grid-column: 2/11;
-    font-size: 0.8em;
   }
 
 }
