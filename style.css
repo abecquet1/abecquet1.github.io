@@ -12,9 +12,10 @@
 *{
   --couleur-fond: white;
   --couleur-texte: black;
-  --couleur-nav: red;
-  --couleur-texte-nav: white;
-  --couleur-ombres: grey;
+  --couleur-nav: white;
+  --couleur-texte-nav: black;
+  --couleur-ombres: #d0d0d0;
+  --couleur-select: red;
 }
 
 
@@ -65,9 +66,11 @@ body
   grid-column: 1/6;
   z-index: 50;
 
+
   /*disposition*/
   display: inline-block;
   text-align: left;
+  padding: 10px;
 
   /*couleurs*/
   background-color: var(--couleur-nav);
@@ -83,7 +86,8 @@ body
   /*disposition*/
   display: inline-block;
   text-align: right;
-  padding-top: 12px;
+  padding: 10px;
+  padding-top: 20px;
 
   /*couleurs*/
   background-color: var(--couleur-nav);
@@ -181,7 +185,7 @@ article img{
 
 .tuile:hover{
   /*changement de couleur de l'ombre en hover*/
-  box-shadow: 5px 5px var(--couleur-nav);
+  box-shadow: 5px 5px var(--couleur-select);
 }
 
 .titre_tuile
@@ -201,7 +205,7 @@ article img{
   border-radius: 20px 20px 0px 0px;
 
   /*couleur*/
-  background-color: rgba(24,24,24,0.8);
+  background-color: rgba(255,0,0,0.8);
   color: white ;
 }
 
@@ -256,16 +260,13 @@ article img{
 }
 
 
-.nord-nord-est a:hover, .nord-nord-ouest a:hover, #current_page
+.nord-nord-est a:hover, #current_page
 {
   /*inversion couleurse hover*/
-  color: black;
-  background: white; 
+  color: white;
+  background: var(--couleur-select); 
 }
 
-.nord-nord-ouest a:hover img{
-  filter: invert();
-}
 
 
 
@@ -282,7 +283,7 @@ footer
   height: 30px;
 
   /*couleurs*/
-  background-color: rgba(24,24,24,0.8);
+  background-color: red;
 
   padding: 20px;
 }
