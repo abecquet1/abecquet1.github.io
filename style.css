@@ -157,6 +157,21 @@ article img{
   box-shadow: 4px 4px var(--couleur-ombres);
 }
 
+.img-d{
+  float: right;
+  height: 200px; 
+  margin: 20px;
+  box-shadow: none;
+}
+
+
+.img-g{
+  float: left;
+  height: 200px; 
+  margin: 20px;
+  box-shadow: none;
+}
+
 
 /*GESTION DES TUILES*/
 .theme {
