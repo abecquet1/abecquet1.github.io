@@ -382,6 +382,7 @@ footer img{
 
   .nord-nord-est{
     font-size: 1.2em;
+    background-color: burlywood;
     text-align: right;
     padding-left: 0px;
     grid-column: 2/11;
