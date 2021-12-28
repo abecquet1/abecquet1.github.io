@@ -63,7 +63,7 @@ body
   /*couleurs*/
   background-color: var(--couleur-nav);
   color: var(--couleur-texte-nav);
-  box-shadow: 0px 2px var(--couleur-ombres);
+  box-shadow: 0px 2px 2px var(--couleur-ombres);
 }
 .nord-nord-ouest {
   /*positionnement*/
@@ -169,7 +169,7 @@ article{
 article img{
   max-width: 100%;
   border-radius: 4px;
-  box-shadow: 4px 4px var(--couleur-ombres);
+  box-shadow: 4px 4px 4px var(--couleur-ombres);
 }
 
 .img-d{
@@ -220,12 +220,12 @@ article img{
 
   /*couleur*/
   padding: 0px;
-  box-shadow: 5px 5px var(--couleur-ombres);
+  box-shadow: 5px 5px 5px var(--couleur-ombres);
 }
 
 .tuile:hover{
   /*changement de couleur de l'ombre en hover*/
-  box-shadow: 5px 5px var(--couleur-select);
+  box-shadow: 5px 5px 5px var(--couleur-select);
 }
 
 .titre_tuile
@@ -253,7 +253,7 @@ article img{
 
 .tuile:hover .titre_tuile{
   /*pour inverser les couleur en hover des tuiles*/
-  background-color: rgba(224,224,224,0.8);
+  background-color: white;
   color: rgb(51,51,51);
 }
 
