@@ -1,0 +1,6 @@
+OBJECTIF : créer un site internet contenant au moins deux pages 
++ une page d'acceuil où vous vous présentez 
++ une page décrivant votre projet (que vous avez rendu lundi)
+
+Pour vous aider, un site ressource : 
+https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML
