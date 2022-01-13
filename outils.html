@@ -1,161 +1,142 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-		<link rel="stylesheet" href="style.css" />				
-        <title>Outils</title>
-		<link rel="icon" type="image/png" href="img/icone_sgp.png" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
-<script type="application/vnd.jupyter.widget-state+json">
-{
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Outils</title>
+    <link rel="icon" type="image/png" href="img/icone_sgp.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"
+        integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+    <script type="application/vnd.jupyter.widget-state+json">
+        {
     "version_major": 2,
     "version_minor": 0,
     "state": {}
 }
 </script>
-    </head>
+</head>
 
-	<body>
+<body>
 
-	<div class= "wrapper">
+    <div class="wrapper">
+        <div class="nord-nord-ouest">
+            <a id="icone" href="index.html"><img src="img/icone_sgp.png" width=50px style="vertical-align: middle">
+                <b>&nbsp; Informatique CSI SGP</b></a>
+        </div>
 
+        <div class="nord-nord-est">
+            <a id="current_page" href="outils.html">Outils</a> &emsp;
+            <a href="1gnsi.html">Première NSI</a> &emsp;
+            <a href="tgnsi.html">Terminale NSI</a>
+        </div>
 
+        <div class="centre-nord">
+            <h1>Outils</h1>
+            Les outils à installer pour travailler chez soi
+        </div>
 
-		<div class="nord-nord-ouest">
-			<a id = "icone" href="index.html"><img src="img/icone_sgp.png" width=50px style = "vertical-align: middle" > <b>&nbsp; Informatique CSI SGP</b></a>
-		</div>
+        <div class="centre">
+            <article>
+                <img class="img-d" src="img/python.png">
+                <h1>Installer Python</h1>
 
+                Le langage de programmation étudié en NSI est le Python. Rendez-vous <a target="blanck"
+                    href="https://www.python.org/downloads"> ici</a> pour en télécharger la dernière version.
 
-		<div class = "nord-nord-est">
-				<a id = "current_page" href="outils.html">Outils</a>  &emsp;
-				<a href="1gnsi.html">Première NSI</a>  &emsp;	
-				<a href="tgnsi.html">Terminale NSI</a>
-		</div>
+                <br><br>
 
-		<div class = "centre-nord">
-			<h1>Outils</h1>
-			Les outils à installer pour travailler chez soi
-		</div>
+                Pour écrire des programmes, nous avons besoin d'un environnement de dévelopement (IDE). Il s'agît d'un
+                éditeur de fichier spécialisé dans l'écriture de code.
+                Python en propose un par défaut : IDLE. Si l'installation de Python s'est bien déroulée, IDLE devrait
+                être installé sur votre ordianteur.
 
+                <br><br>
 
+                D'autres IDE généralistes ou spécialisés existent (<a target="blanck"
+                    href="https://code.visualstudio.com/download">Visual Studio Code</a>, <a target="blanck"
+                    href="https://www.jetbrains.com/fr-fr/pycharm/download/">Pycharm</a>, etc.). À vous de les essayer
+                pour trouver celui qui vous convient le mieux.
+            </article>
 
-				
-		<div class="centre">
+            <article>
+                <img class="img-g" src="img/icone_github_noire.svg" style="height: 200px ;">
+                <h1>Se créer un compte Github</h1>
 
+                Afin de pouvoir travailler à la fois en classe et à la maison, individuellement ou en groupe, nous
+                allons utiliser le service Github.
+                À la manière d'un Google drive, Github permet de disposer d'un espace de stockage en ligne et propose de
+                plus des outils spécialisés dans le développement de logiciels (travail collaboratif, versionnage,
+                etc.).
+                Pour s'inscrire, rendez-vous <a target="blanck" href="https://github.com">ici</a>.
 
-			<article>
+                <br><br>
 
-				<img class = "img-d" src = "img/python.png" >
-				<h1>Installer Python</h1>
+                Sur votre oridnateur personnel, vous pouvez installer <a target="blanck"
+                    href="https://desktop.github.com">Github Desktop</a> qui vous permet d'intéragir avec votre compte
+                Github sans passer par un navigateur internet.
 
-				
-	
-				Le langage de programmation étudié en NSI est le Python. Rendez-vous <a target = "blanck" href="https://www.python.org/downloads"> ici</a>  pour en télécharger la dernière version. 
+                <br><br>
 
-				<br><br>
+                Github vous permet également d'héberger une page web personnelle gratuitement via <a target="blanck"
+                    href="https://pages.github.com">Github Pages.</a>
 
-				Pour écrire des programmes, nous avons besoin d'un environnement de dévelopement (IDE). Il s'agît d'un éditeur de fichier spécialisé dans l'écriture de code. 
-				Python en propose un par défaut : IDLE. Si l'installation de Python s'est bien déroulée, IDLE devrait être installé sur votre ordianteur. 
-				
-				<br><br>
+            </article>
 
-				D'autres IDE généralistes ou spécialisés existent (<a target = "blanck" href="https://code.visualstudio.com/download">Visual Studio Code</a>, <a target = "blanck" href = "https://www.jetbrains.com/fr-fr/pycharm/download/">Pycharm</a>, etc.). À vous de les essayer pour trouver celui qui vous convient le mieux. 
-			</article> 
+            <article>
+                <h1>Sources et ressources</h1>
 
-			<article>
+                Ressources institutionnelles :
 
-				<img class = "img-g" src = "img/icone_github.png" style = "height: 200px ;filter: invert()">
-           		<h1>Se créer un compte Github</h1>
+                <ul>
+                    <li>Les programmes de NSI de <a target="blanck"
+                            href="https://eduscol.education.fr/document/30007/download">première</a> et de <a
+                            target="blanck" href="https://eduscol.education.fr/document/30010/download">terminale</a>.
+                    </li>
+                    <li>La <a target="blanck" href="Fichiers/TNSI/sujets_epreuves_pratique_2021.pdf">banque des
+                            sujets</a> de l'épreuve pratique de terminale.</li>
+                </ul>
 
-				Afin de pouvoir travailler à la fois en classe et à la maison, individuellement ou en groupe, nous allons utiliser le service Github. 
-				À la manière d'un Google drive, Github permet de disposer d'un espace de stockage en ligne et propose de plus des outils spécialisés dans le développement de logiciels (travail collaboratif, versionnage, etc.).
-				Pour s'inscrire, rendez-vous <a target = "blanck" href = "https://github.com">ici</a>.
+                Les sources de mes cours :
 
-				<br><br>
+                <ul>
 
-				Sur votre oridnateur personnel, vous pouvez installer <a target = "blanck" href="https://desktop.github.com">Github Desktop</a> qui vous permet d'intéragir avec votre compte Github sans passer par un navigateur internet.
-				
-				<br><br>
+                    <li>Les livres de spécialité NSI <a target="blanck"
+                            href="https://www.editions-ellipses.fr/accueil/13786-specialite-nsi-30-lecons-avec-exercices-corriges-premiere-2e-edition-9782340057814.html">première</a>
+                        et
+                        <a target="blanck"
+                            href="https://www.editions-ellipses.fr/accueil/10445-20818-specialite-numerique-et-sciences-informatiques-lecons-avec-exercices-corriges-terminale-nouveaux-programmes-9782340038554.html">terminale</a>.
+                    </li>
+                    <li>Ces livres sont accompagnés de <a target="blanck" href="https://www.nsi-terminale.fr">ressources
+                            en ligne</a> que vous pouvez consulter.</li>
+                </ul>
 
-				Github vous permet également d'héberger une page web personnelle gratuitement via <a target = "blanck" href = "https://pages.github.com">Github Pages.</a>
+                Autres sources, en vrac :
 
-        	</article>
+                <ul>
+                    <li>La <a target="blanck" href="https://docs.python.org/fr/3/">documentation Python</a>.</li>
+                    <li>Le site <a target="blanck" href="https://openclassrooms.com/fr/">OpenClassroom</a>. Ce site
+                        regorge de cours et tutoriels vous permettant d'apprendre de nombreux langages.</li>
+                </ul>
+            </article>
+        </div>
 
+        <div class="sud">
+            <footer>
+                &ensp;
+                <a title="Me contacter par mail" target="_blank" href="mailto:antoine.becquet@ac-lyon.fr"><img
+                        src="img/icone_mail.png"></a> &ensp;
+                <a title="Mon profil Github" target="_blank" href="https://github.com/abecquet1"><img
+                        src="img/icone_github.svg"></a> &ensp;
+                <a title="Rejoindre le discord" target="_blank" href="https://discord.gg/HztyYSR9SY"><img
+                        src="img/icone_discord.png"></a> &ensp;
+                <a title="Se connecter à Pronote" target="_blank"
+                    href="https://0010072y.index-education.net/pronote"><img src="img/icone_pronote.png"></a>
+            </footer>
+        </div>
+    </div>
 
+</body>
 
-			<article>
-				<h1>Sources et ressources</h1>
-
-				Ressources institutionnelles :
-
-				<ul>
-					<li>Les programmes de NSI de <a target = "blanck" href = "https://eduscol.education.fr/document/30007/download">première</a> et de <a target = "blanck" href="https://eduscol.education.fr/document/30010/download">terminale</a>.</li>
-					<li>La <a target = "blanck" href = "Fichiers/TNSI/sujets_epreuves_pratique_2021.pdf">banque des sujets</a> de l'épreuve pratique de terminale.</li>
-				</ul>
-
-				Les sources de mes cours :
-
-				<ul>
-
-					<li>Les livres de spécialité NSI  <a target = "blanck" href="https://www.editions-ellipses.fr/accueil/13786-specialite-nsi-30-lecons-avec-exercices-corriges-premiere-2e-edition-9782340057814.html">première</a> et
-						<a target = "blanck" href="https://www.editions-ellipses.fr/accueil/10445-20818-specialite-numerique-et-sciences-informatiques-lecons-avec-exercices-corriges-terminale-nouveaux-programmes-9782340038554.html">terminale</a>.
-					</li>
-					<li>Ces livres sont accompagnés de <a target = "blanck" href = "https://www.nsi-terminale.fr">ressources en ligne</a> que vous pouvez consulter.</li>
-				</ul>	
-
-				Autres sources, en vrac :
-
-				<ul>
-					<li>La <a target = "blanck" href = "https://docs.python.org/fr/3/">documentation Python</a>.</li>
-					<li>Le site <a target = "blanck" href = "https://openclassrooms.com/fr/">OpenClassroom</a>. Ce site regorge de cours et tutoriels vous permettant d'apprendre de nombreux langages.</li>
-				</ul>
-
-		 	</article>
-
-
-		 
-
-
-		
-
-				
-
-		</div>
-
-		<div class="sud">
-			<footer>
-				&ensp;
-				<a title = "Me contacter par mail" target="_blank" href = "mailto:antoine.becquet@ac-lyon.fr"><img src="img/icone_mail.png"></a>  &ensp;  
-				<a title = "Mon profil Github" target="_blank" href = "https://github.com/abecquet1" ><img src="img/icone_github.png" ></a>   &ensp;
-				<a title = "Rejoindre le discord" target="_blank" href = "https://discord.gg/HztyYSR9SY"><img src="img/icone_discord.png"></a>  &ensp; 
-				<a title = "Se connecter à Pronote" target="_blank" href = "https://0010072y.index-education.net/pronote"><img src="img/icone_pronote.png"></a>
-			</footer>
-		</div>
-				
-					
-
-								
-								
-									
-								
-
-					
-
-				
-	</div>
-
-
-
-
-
-			
-
-			
-
-			
-
-
-    </body>
 </html>
