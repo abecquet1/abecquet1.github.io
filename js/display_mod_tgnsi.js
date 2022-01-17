@@ -96,6 +96,13 @@ $(document).ready(function () {
             }
         }
 
+        // on change le lien de l'image
+        if (status == "1") {
+            $(this).find(".mod_image").attr("src", "img/line_mod.png");
+        } else {
+            $(this).find(".mod_image").attr("src", "img/big_mod.png");
+        }
+
     });
 
 });
