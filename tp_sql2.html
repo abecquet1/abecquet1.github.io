@@ -1,188 +1,175 @@
 ﻿<!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-		<link rel="stylesheet" href="style.css" />
-        <title>Terminale</title>
-		<link rel="icon" type="image/png" href="img/icone_sgp.png" />
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Terminale</title>
+    <link rel="icon" type="image/png" href="img/icone_sgp.png" />
+</head>
 
-	<body>
+<body>
 
-	<div class= "wrapper">
+    <div class="wrapper">
+        <div class="nord-nord-ouest">
+            <a id="icone" href="index.html"><img src="img/icone_sgp.png" width=50px style="vertical-align: middle"> <b>
+                    &nbsp; Informatique CSI SGP</b></a>
+        </div>
 
-		<div class="nord-nord-ouest">
-			<a id = "icone" href="index.html"><img src="img/icone_sgp.png" width=50px style = "vertical-align: middle" > <b> &nbsp; Informatique CSI SGP</b></a>
-		</div>
+        <div class="nord-nord-est">
+            <a href="outils.html">Outils</a> &emsp;
+            <a href="1gnsi.html">Première NSI</a> &emsp;
+            <a id="current_page" href="tgnsi.html">Terminale NSI</a>
+        </div>
 
+        <div class="centre-nord">
+            <h1 id="hdp">Requêtes SQL</h1>
+            Terminale NSI, Bases de données
+        </div>
 
-		<div class = "nord-nord-est">
-				<a href="outils.html">Outils</a>  &emsp;
-				<a href="1gnsi.html">Première NSI</a>  &emsp;	
-				<a id = "current_page" href="tgnsi.html">Terminale NSI</a>
-		</div>
+        <div class="centre">
+            <article>
+                Dans ce TP, on apprends à se servir des commandes SQL permettant de réaliser des requêtes permettant de
+                d'intéragir avec une base de données. Les notions différentes syantaxes sont données sous forme de lien
+                vers le site <a href="sql.sh">sql.sh</a> à consulter sans modération.
 
-		<div class = "centre-nord">
-			<h1 id="hdp">Requêtes SQL</h1>
-			Terminale NSI, Bases de données
-		</div>
-				
-		<div class="centre">
+                <h2>Import des données et Relations</h2>
 
-			<article>
+                <p>
+                    Télécharger <a href="https://www.nsi-terminale.fr/files/data/livres.sql">le fichier suivant</a> et
+                    l'exécuter dans votre SGBD (vous pouvez vous aider du premier TP pour vous rappeler comment on
+                    fait).
 
+                    Une fois l'import terminé, lire les premières lignes du fichier et en déduire les relations définies
+                    dans cette base (bien identifier les clés primaires et étrangères).
 
+                </p>
 
+                <h2>SELECT</h2>
 
-    Dans ce TP, on apprends à se servir des commandes SQL permettant de réaliser des requêtes permettant de d'intéragir avec une base de données. Les notions différentes syantaxes sont données sous forme de lien vers le site <a href = "sql.sh">sql.sh</a> à consulter sans modération. 
-	
-    <h2>Import des données et Relations</h2>
-	
-	<p>
-    	Télécharger <a href="https://www.nsi-terminale.fr/files/data/livres.sql">le fichier suivant</a> et l'exécuter dans votre SGBD (vous pouvez vous aider du premier TP pour vous rappeler comment on fait).
-	
-	Une fois l'import terminé, lire les premières lignes du fichier et en déduire les relations définies dans cette base (bien identifier les clés primaires et étrangères).
-	
-	</p>
+                L'instruction SELECT permet d'afficher toute ou une partie des données présentes dans une ou plusieures
+                relations d'une base de données. Elle est utilisée conjointement avec l'instruction FROM et parfois avec
+                l'instruction WHERE. Plus de détails <a href="https://sql.sh/cours/select">ici</a> puis <a
+                    href="https://sql.sh/cours/where">là</a>
 
-    <h2>SELECT</h2>
+                Tester des requêtes SELECT dans la base de données importée :
 
-    L'instruction SELECT permet d'afficher toute ou une partie des données présentes dans une ou plusieures relations d'une base de données. Elle est utilisée conjointement avec l'instruction FROM et parfois avec l'instruction WHERE. Plus de détails <a href = "https://sql.sh/cours/select">ici</a> puis <a href = "https://sql.sh/cours/where">là</a>
-	
-	Tester des requêtes SELECT dans la base de données importée : 
-	
-	<ul>
-		<li>afficher le titre de tous les livres de la médiathèque ;</li>
-		<li>afficher l'isbn des livres empruntés de la bibliothèques ;</li>
-		<li>afficher le titre et l'année de parution de tous les livres parus entre 1970 et 1980 ;</li>
-		<li>afficher toutes les données des livres parus après 1990.</li>		
-	</ul>
-	
-	<h2>Fonctions d'agrégation</h2>
+                <ul>
+                    <li>afficher le titre de tous les livres de la médiathèque ;</li>
+                    <li>afficher l'isbn des livres empruntés de la bibliothèques ;</li>
+                    <li>afficher le titre et l'année de parution de tous les livres parus entre 1970 et 1980 ;</li>
+                    <li>afficher toutes les données des livres parus après 1990.</li>
+                </ul>
 
-    Les instructions COUNT, SUM, AVG, MIN, MAX permettent via SELECT de calculer le nombre, la somme, la moyenne le minimum, le maximum d'un certain sous ensemble de données.
-	Plus de détails <a href = "https://sql.sh/fonctions/agregation">ici</a> (ignorer la partie GROUP BY).
-	
-	<ul>
-		<li>afficher le nombre total de livres ;</li>
-		<li>afficher le nombre total de livres empruntés ;</li>
-		<li>afficher le nombre total de livres parus après 1990 ;</li>
-		<li>afficher la moyenne des dates de parution des livres ;</li>
-		<li>afficher l'année de parution la plus ancienne ;</li>
-		
-	</ul>
-	
-	<h2>Doublon et tri</h2>
-	
-	Dans une requête SELECT, il est possible de ne pas afficher les doublons d'un certain attribut grâce à l'instruction <a href = "https://sql.sh/cours/distinct">DISTINCT</a>. Il est aussi possible de déterminer un certain ordre d'affichage via l'instruction <a href = "https://sql.sh/cours/order-by">ORDER BY</a>.
+                <h2>Fonctions d'agrégation</h2>
 
-	<ul>
-		<li>afficher toutes les années de parution sans doublon;</li>
-		<li>afficher l'isbn de tous les livres empruntés triés par ISBN ;</li>
-		<li>afficher l'isbn et la date d'emprunt de tous les livres empruntés, triés par date d'emprunt ;</li>
-	</ul>
-	
-	<h2>Jointures</h2>
-	
-	La jointure permet de créer (le temps d'une requête) une table contenant des données provenant de plusieurs autres tables lorsque celles-ci disposent
-	d'un attribut commun. Plus de détail <a href = "https://sql.sh/cours/jointures">ici</a> (ne pas faire attention au différents types de jointure, on n'utilisera que l'instruction JOIN). En fusionnant deux tables selon un certain attribut, on peut afficher des données de manière plus complètes. Par exemple, fusioner les tables emprunt et livre permet d'afficher le titre des livres empruntés et non seulement l'ISBN.
+                Les instructions COUNT, SUM, AVG, MIN, MAX permettent via SELECT de calculer le nombre, la somme, la
+                moyenne le minimum, le maximum d'un certain sous ensemble de données.
+                Plus de détails <a href="https://sql.sh/fonctions/agregation">ici</a> (ignorer la partie GROUP BY).
 
-	
-	<ul>
-		<li>afficher toutes les données de la jointure des tables livres et emprunt (attribut commun : isbn);</li>
-		<li>afficher le nom de chaque personne ayant un emprunt en cours (dans quelles tables se trouvent ces info ?);</li>
-	</ul>
-	
-	
-		
-<h2>Requêtes imbiquées et alias</h2>
+                <ul>
+                    <li>afficher le nombre total de livres ;</li>
+                    <li>afficher le nombre total de livres empruntés ;</li>
+                    <li>afficher le nombre total de livres parus après 1990 ;</li>
+                    <li>afficher la moyenne des dates de parution des livres ;</li>
+                    <li>afficher l'année de parution la plus ancienne ;</li>
 
-Si à première vue l'instruction SELECT sert à afficher des données, son fonctionnement permet de constriure des commandes dites imbriquées. En effet, le résultat d'une requête SELECT est une table, il est donc possible de remplacer dans les syntaxes précédentes n'importe quelle table par une telle requête. 
+                </ul>
 
-	
-<ul>
-	<li>afficher les titres des livres les plus anciens (date d'édition minimum) ;</li>
-	<li>afficher les titres des livres empruntés et édités avant 2000 ;</li>
-	<li>afficher les titres des livres parus la même année que 'Moby Dick'.</li>
-</ul>
+                <h2>Doublon et tri</h2>
 
-Il est parfois utile dans une requête imbriquée de donner un nom (alias) au résultat d'un SELECT. Pour cela, on utilise l'instruction <a href = "https://sql.sh/cours/alias">AS</a>.
+                Dans une requête SELECT, il est possible de ne pas afficher les doublons d'un certain attribut grâce à
+                l'instruction <a href="https://sql.sh/cours/distinct">DISTINCT</a>. Il est aussi possible de déterminer
+                un certain ordre d'affichage via l'instruction <a href="https://sql.sh/cours/order-by">ORDER BY</a>.
 
-<ul>
-	<li>afficher, en utilisant des requêtes imbriquées et un alias, les données des livres parus entre 1990 et 2000.</li>
-</ul>
-	
+                <ul>
+                    <li>afficher toutes les années de parution sans doublon;</li>
+                    <li>afficher l'isbn de tous les livres empruntés triés par ISBN ;</li>
+                    <li>afficher l'isbn et la date d'emprunt de tous les livres empruntés, triés par date d'emprunt ;
+                    </li>
+                </ul>
 
+                <h2>Jointures</h2>
 
-<h2>Modification des données</h2>
+                La jointure permet de créer (le temps d'une requête) une table contenant des données provenant de
+                plusieurs autres tables lorsque celles-ci disposent
+                d'un attribut commun. Plus de détail <a href="https://sql.sh/cours/jointures">ici</a> (ne pas faire
+                attention au différents types de jointure, on n'utilisera que l'instruction JOIN). En fusionnant deux
+                tables selon un certain attribut, on peut afficher des données de manière plus complètes. Par exemple,
+                fusioner les tables emprunt et livre permet d'afficher le titre des livres empruntés et non seulement
+                l'ISBN.
 
-<h3>Suppression de lignes</h3>
+                <ul>
+                    <li>afficher toutes les données de la jointure des tables livres et emprunt (attribut commun :
+                        isbn);</li>
+                    <li>afficher le nom de chaque personne ayant un emprunt en cours (dans quelles tables se trouvent
+                        ces info ?);</li>
+                </ul>
 
-On peut supprimer une ou plusieurs ligne via l'instruction <a href = "https://sql.sh/cours/delete">DELETE</a>.
+                <h2>Requêtes imbiquées et alias</h2>
 
-<ul>
-	<li>supprimer de la table emprunt tous les livres d'un utilisateur donné (chercher un code barre valide) ;</li>
-	<li>supprimer de la table usager tous les utilisateurs dont le code postal est '75001' ou '75002'.</li>
-</ul>
+                Si à première vue l'instruction SELECT sert à afficher des données, son fonctionnement permet de
+                constriure des commandes dites imbriquées. En effet, le résultat d'une requête SELECT est une table, il
+                est donc possible de remplacer dans les syntaxes précédentes n'importe quelle table par une telle
+                requête.
 
-	
-<h3>Mise à jour</h3>
+                <ul>
+                    <li>afficher les titres des livres les plus anciens (date d'édition minimum) ;</li>
+                    <li>afficher les titres des livres empruntés et édités avant 2000 ;</li>
+                    <li>afficher les titres des livres parus la même année que 'Moby Dick'.</li>
+                </ul>
 
-La commande <a href = "https://sql.sh/cours/update">UPDATE</a> permet de modifier une ou plusieurs lignes ou colonne d'une table.
+                Il est parfois utile dans une requête imbriquée de donner un nom (alias) au résultat d'un SELECT. Pour
+                cela, on utilise l'instruction <a href="https://sql.sh/cours/alias">AS</a>.
 
-<ul>
-	<li>modifier l'email de l'utilisateur de code barre '934701281931582' en 'spetit@hmail.com' ;</li>
-	<li>ajouter 30 jours à la date de rendu de tous les livres empruntés (remarque : on a le droit comme en python d'écrire x = x+1 dans un SET).</li>
-</ul>
+                <ul>
+                    <li>afficher, en utilisant des requêtes imbriquées et un alias, les données des livres parus entre
+                        1990 et 2000.</li>
+                </ul>
 
-	
-	
-	
+                <h2>Modification des données</h2>
 
-			</article>	
-	
+                <h3>Suppression de lignes</h3>
 
-				
+                On peut supprimer une ou plusieurs ligne via l'instruction <a
+                    href="https://sql.sh/cours/delete">DELETE</a>.
 
-</div>
+                <ul>
+                    <li>supprimer de la table emprunt tous les livres d'un utilisateur donné (chercher un code barre
+                        valide) ;</li>
+                    <li>supprimer de la table usager tous les utilisateurs dont le code postal est '75001' ou '75002'.
+                    </li>
+                </ul>
 
-<div class="sud">
-	<footer>
-		&ensp;
-		<a title = "Me contacter par mail" target="_blank" href = "mailto:antoine.becquet@ac-lyon.fr"><img src="img/icone_mail.png"></a>  &ensp;  
-		<a title = "Mon profil Github" target="_blank" href = "https://github.com/abecquet1" ><img src="img/icone_github.png" ></a>   &ensp;
-		<a title = "Rejoindre le discord (recherche un ou une modo)" target="_blank" href = ""><img src="img/icone_discord.png"></a>  &ensp; 
-		<a title = "Se connecter à Pronote" target="_blank" href = "https://0010072y.index-education.net/pronote"><img src="img/icone_pronote.png"></a>
-	</footer>
-</div>
-		
-			
+                <h3>Mise à jour</h3>
 
-						
-						
-							
-</div>						
+                La commande <a href="https://sql.sh/cours/update">UPDATE</a> permet de modifier une ou plusieurs lignes
+                ou colonne d'une table.
 
-			
+                <ul>
+                    <li>modifier l'email de l'utilisateur de code barre '934701281931582' en 'spetit@hmail.com' ;</li>
+                    <li>ajouter 30 jours à la date de rendu de tous les livres empruntés (remarque : on a le droit comme
+                        en python d'écrire x = x+1 dans un SET).</li>
+                </ul>
+            </article>
+        </div>
 
-		
-</div>
-
-
-
-
-
-	
-
-	
-
-	
-
+        <div class="sud">
+            <footer>
+                &ensp;
+                <a title="Me contacter par mail" target="_blank" href="mailto:antoine.becquet@ac-lyon.fr"><img
+                        src="img/icone_mail.png"></a> &ensp;
+                <a title="Mon profil Github" target="_blank" href="https://github.com/abecquet1"><img
+                        src="img/icone_github.svg"></a> &ensp;
+                <a title="Rejoindre le discord (recherche un ou une modo)" target="_blank" href=""><img
+                        src="img/icone_discord.png"></a> &ensp;
+                <a title="Se connecter à Pronote" target="_blank"
+                    href="https://0010072y.index-education.net/pronote"><img src="img/icone_pronote.png"></a>
+            </footer>
+        </div>
+    </div>
+    </div>
 
 </body>
+
 </html>
-
-   
-
-
