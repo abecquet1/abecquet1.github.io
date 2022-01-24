@@ -42,56 +42,56 @@ $(document).ready(function () {
 
         if (type == "P") {
             if (status == "0") {
-                $("#programming").load("prefabs/TNSI/P_tgnsi_big.html");
                 $("#programming").css("text-align", "center");
+                $("#programming").load("prefabs/TNSI/P_tgnsi_big.html");
                 $(this).attr("status", "1");
             }
 
             if (status == "1") {
-                $("#programming").load("prefabs/TNSI/P_tgnsi_line.html");
                 $("#programming").css("text-align", "left");
+                $("#programming").load("prefabs/TNSI/P_tgnsi_line.html");
                 $(this).attr("status", "0");
             }
         }
 
         if (type == "A") {
             if (status == "0") {
-                $("#algorithms").load("prefabs/TNSI/A_tgnsi_big.html");
                 $("#algorithms").css("text-align", "center");
+                $("#algorithms").load("prefabs/TNSI/A_tgnsi_big.html");
                 $(this).attr("status", "1");
             }
 
             if (status == "1") {
-                $("#algorithms").load("prefabs/TNSI/A_tgnsi_line.html");
                 $("#algorithms").css("text-align", "left");
+                $("#algorithms").load("prefabs/TNSI/A_tgnsi_line.html");
                 $(this).attr("status", "0");
             }
         }
 
         if (type == "BD") {
             if (status == "0") {
-                $("#database").load("prefabs/TNSI/BD_tgnsi_big.html");
                 $("#database").css("text-align", "center");
+                $("#database").load("prefabs/TNSI/BD_tgnsi_big.html");
                 $(this).attr("status", "1");
             }
 
             if (status == "1") {
-                $("#database").load("prefabs/TNSI/BD_tgnsi_line.html");
                 $("#database").css("text-align", "left");
+                $("#database").load("prefabs/TNSI/BD_tgnsi_line.html");
                 $(this).attr("status", "0");
             }
         }
 
         if (type == "ARD") {
             if (status == "0") {
-                $("#hardware_archi").load("prefabs/TNSI/ARD_tgnsi_big.html");
                 $("#hardware_archi").css("text-align", "center");
+                $("#hardware_archi").load("prefabs/TNSI/ARD_tgnsi_big.html");
                 $(this).attr("status", "1");
             }
 
             if (status == "1") {
-                $("#hardware_archi").load("prefabs/TNSI/ARD_tgnsi_line.html");
                 $("#hardware_archi").css("text-align", "left");
+                $("#hardware_archi").load("prefabs/TNSI/ARD_tgnsi_line.html");
                 $(this).attr("status", "0");
             }
         }
