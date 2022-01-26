@@ -14515,14 +14515,14 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Structures-arborescentes,-explorateur-de-fichiers">Structures arborescentes, explorateur de fichiers<a class="anchor-link" href="#Structures-arborescentes,-explorateur-de-fichiers">&#182;</a></h1><p>Nous avons déjà défini et travaillé aves les arbres binaires dans lesquels chaque noeud non-vide possède exécatement deux fils. On peut parfaitement concevoir des arbre plus généraux dans lesquels les noeuds ont un nombre quelconque de fils.</p>
+<h1 id="A5---Structures-arborescentes">A5 - Structures arborescentes<a class="anchor-link" href="#A5---Structures-arborescentes">&#182;</a></h1><p>Nous avons déjà défini et travaillé aves les arbres binaires dans lesquels chaque noeud non-vide possède exécatement deux fils. On peut parfaitement concevoir des arbre plus généraux dans lesquels les noeuds ont un nombre quelconque de fils.</p>
 <h2 id="1---Impl%C3%A9mentation-en-python,-fonctions-de-bases">1 - Impl&#233;mentation en python, fonctions de bases<a class="anchor-link" href="#1---Impl%C3%A9mentation-en-python,-fonctions-de-bases">&#182;</a></h2><p>Redéfinissons une classe <code>Noeud</code> de sorte de ne plus stocker des sous-arbres gauche et droit mais plutôt un tableau (éventuellement vide) de sous arbres.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Noeud</span><span class="p">:</span>
@@ -14533,32 +14533,119 @@ a.anchor-link {
         
 <span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;renvoie le nombre de valeurs de l&#39;arbre a, à compléter&quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">+=</span><span class="n">taille</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+<span class="k">def</span> <span class="nf">hauteur</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;renvoie la hauteur de l&#39;arbre&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">a</span><span class="o">.</span><span class="n">fils</span> <span class="o">==</span> <span class="p">[]:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">res</span> <span class="o">=</span> <span class="n">hauteur</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">)):</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">hauteur</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">h</span><span class="o">&gt;</span><span class="n">res</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">=</span><span class="n">h</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">+</span><span class="mi">1</span>
+        
         
 <span class="k">def</span> <span class="nf">parcours_prefixe</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;affiche les valeurs de a dans l&#39;ordre préfixe, à compléter&quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">valeur</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">:</span>
+            <span class="n">parcours_prefixe</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
        
 <span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Renvoie la somme des éléments de a, à compléter&quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">res</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">valeur</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">+=</span> <span class="n">somme</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span> 
 
 <span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;teste si la valeur v se trouve dans a, à compléter&quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="n">a</span><span class="o">.</span><span class="n">valeur</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="n">recherche</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span> 
+        <span class="k">return</span> <span class="kc">False</span>
+    
     
 <span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;renvoie la plus petite valeur de a&quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">valeur</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">minimum</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">fils</span><span class="p">])</span>
+        <span class="c1">#remarque : cette façon de faire (en utlisant les tableaux créés par compréhention est utilisable dans les autres questions également)</span>
+    
+        
 
 <span class="c1">#tests </span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">Noeud</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="n">Noeud</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="n">Noeud</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">9</span><span class="p">)]),</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="p">[])]),</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="n">Noeud</span><span class="p">(</span><span class="mi">7</span><span class="p">)])])</span>
 <span class="c1">#tester vos fonctions </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">taille</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hauteur</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">parcours_prefixe</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">somme</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">recherche</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">recherche</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">42</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>9
+4
+1
+2
+3
+5
+8
+9
+6
+4
+7
+45
+True
+False
+1
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14580,10 +14667,10 @@ a.anchor-link {
 <h3 id="Activit%C3%A9">Activit&#233;<a class="anchor-link" href="#Activit%C3%A9">&#182;</a></h3><p>On se propose de recréer un Python un système d'arborescence de fichiers proposant des commande similaires</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Directory</span><span class="p">:</span>
@@ -14594,7 +14681,7 @@ a.anchor-link {
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">childs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
         
 <span class="k">class</span> <span class="nc">File</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;La classe fichier, définie par un nom, un dossier parent et un contenu&quot;&quot;&quot;</span>
@@ -14613,49 +14700,120 @@ a.anchor-link {
 
 
 <span class="n">ROOT</span> <span class="o">=</span> <span class="n">Directory</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="c1">#la racine de l&#39;arborescence</span>
-<span class="n">DIR</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="c1">#le dossier courant, modifié par la commade cd</span>
+<span class="n">DIR</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="c1">#le dossier courant, modifié par la commande cd</span>
 
 <span class="k">def</span> <span class="nf">ls</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Affiche la liste des noms des dossiers et fichiers du dossier courant </span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">cd</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    change le dossier courant</span>
 <span class="sd">    name doit être le nom d&#39;un dossier contenu dans le dossier courant ou .. pour faire référence au parent</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">global</span> <span class="n">DIR</span> 
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;..&quot;</span><span class="p">:</span>
+        <span class="n">DIR</span> <span class="o">=</span> <span class="n">DIR</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="n">is_dir</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span> 
+                <span class="n">DIR</span> <span class="o">=</span> <span class="n">c</span> 
+                <span class="k">break</span>
+    
 
 <span class="k">def</span> <span class="nf">mkdir</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    créer un nouveau dossier dans le dossier courant</span>
 <span class="sd">    le nom name ne doit pas être déjà utilisé dans le dossier courant </span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dossier ou fichier existant !&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Directory</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">DIR</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">touch</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    créer un nouveau fichier dans le dossier courant</span>
 <span class="sd">    le nom name ne doit pas être déjà utilisé dans le dossier courant </span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dossier ou fichier existant !&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">File</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">DIR</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">edit</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    modifie le contenu du fichier </span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">is_file</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span> 
+            <span class="k">break</span>
+        
 <span class="k">def</span> <span class="nf">path</span><span class="p">():</span> 
     <span class="sd">&quot;&quot;&quot;renvoie le chemin de la racine vers le dossier courant sous la forme /dir1/dir2/...&quot;&quot;&quot;</span>
-    <span class="k">pass</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">DIR</span>
+    <span class="k">while</span> <span class="n">r</span> <span class="o">!=</span> <span class="n">ROOT</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+        <span class="n">res</span><span class="o">+=</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">+=</span><span class="s2">&quot;/&quot;</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+<span class="k">def</span> <span class="nf">python3</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;exécute un fichier python&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">.</span><span class="n">children</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">is_file</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+            <span class="n">exec</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> 
+            <span class="k">break</span>
+    
+
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;dos1&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;dos2&quot;</span><span class="p">)</span>
+<span class="n">touch</span><span class="p">(</span><span class="s2">&quot;config.txt&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;dos1&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">ls</span><span class="p">()</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;dos1&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">())</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>dos1
+dos2
+config.txt
+/dos1/Documents
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14668,6 +14826,139 @@ a.anchor-link {
 </ul>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pour réhinitialiser la simulation </span>
+<span class="n">ROOT</span> <span class="o">=</span> <span class="n">Directory</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> 
+<span class="n">DIR</span> <span class="o">=</span> <span class="n">ROOT</span> 
+
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;perso&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;programmes&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;perso&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">)</span>
+<span class="n">touch</span><span class="p">(</span><span class="s2">&quot;la_liste_de_mes_mdp.txt&quot;</span><span class="p">)</span>
+<span class="n">touch</span><span class="p">(</span><span class="s2">&quot;mon_dm_de_maths.tex&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Images&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;Images&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Vacances_a_ibiza&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Scans_parfaitement_legaux&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Vidéos&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;Vidéos&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Compilations_de_mes_meilleurs_snap&quot;</span><span class="p">)</span>
+<span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Projet_de_chaine_youtube&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;programmes&quot;</span><span class="p">)</span>
+<span class="n">touch</span><span class="p">(</span><span class="s2">&quot;mon_projet_de_NSI.py&quot;</span><span class="p">)</span>
+<span class="n">edit</span><span class="p">(</span><span class="s2">&quot;mon_projet_de_NSI.py&quot;</span><span class="p">,</span> <span class="s2">&quot;for i in range(5):</span><span class="se">\n</span><span class="s2">    print(&#39;coucou&#39;)&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="3---Le-format-XML">3 - Le format XML<a class="anchor-link" href="#3---Le-format-XML">&#182;</a></h2><p>Le format XML est un format de stockage d'informations arborescentes. Comme le langage HTML, il repose sur l'utilisation de balises &lt;&gt; mais en laissant une liberté quasi totale pour les noms et les attributs de celles-ci.</p>
+<p>Prenons un exemple de fichier XML</p>
+
+</div>
+</div><recette difficulté = "facile">
+    <titre>Crèpes sucrées</titre>
+    <temps>1h</temps>
+    <note>pour 10 personnes</note>
+    <ingrédients>
+        <i q = "200g">farine</i>
+        <i q = "40g">sucre</i>
+        <i q = "2">oeufs</i>
+        <i q = "40cL">lait</i>
+    </ingrédients>
+    <étapes>
+        <e>mélanger les ingrédients solides</e>
+        <e>ajouter le lait</e>
+        <e>laisser reposer </e>
+        <e>cuire sur une poêle beurée</e>
+    </étapes>
+</recette>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Un document est composé de <strong>balises ouvrantes</strong> comme <code>&lt;recette difficulté = "facile"&gt;</code> et des <strong>balises fermantes</strong> correspondantes comme <code>&lt;/recette&gt;</code>. Ici <code>recette</code> est le <strong>nom</strong> de la balise et <code>difficulté"</code> en est un <strong>attribut</strong> dont la <strong>valeur</strong> est <code>"facile"</code>.</p>
+<p>Pour être bien formé, un document XML doit respecter un certain nombre de contraintes :</p>
+<ul>
+<li>les balises doivent être bien parenthésées (on considère que chaque nom de balise constitue une parethèse d'un type différent) ;</li>
+<li>les balises sont sensible à la casse (<code>recette</code> diférent de <code>rEcEtTe</code>) ;</li>
+<li>tout le documents est placé dans une unique <strong>balise racine</strong> ;</li>
+<li>les valeurs d'attributs sont données et délimitées par des guillemets ;</li>
+<li>il ne peut pas y avoir deux attributs du même nom dans une même balise ;</li>
+<li>pour utiliser les caractères <code>&lt;</code>,<code>&gt;</code>,<code>'</code> et <code>"</code> on utilise leur version échapée <code>&amp;lt;</code>,<code>&amp;gt;</code>,<code>&amp;amp;</code>, et <code>&amp;quot;</code> ;</li>
+<li>n'importe quel caractère unicode peut être échapé avec la syntaxe <code>&amp;#code</code> où <code>code</code> est remplacé par son code unicode en base 10. </li>
+</ul>
+<p>On se rend compte que le format xml est en fait une structure d'arbre.</p>
+<p><em>schéma arbre fichier xml</em></p>
+<p>On utilise un standard appelé DOM (<em>Document Object Model</em>) pour définir une classe abstraite qui sera adaptée selon le langage de programmation et ayant une structure arborescente. En voici les attributs :</p>
+<ul>
+<li><strong>Type</strong> : un noeud peur être un texte, un noeud ou un noeud document (racine).</li>
+<li><strong>Nom</strong> : le nom du nom, par exemple recette. Un texte à pour nom <code>"#text"</code>, le noeud document a pour nom <code>"#document"</code>.</li>
+<li><strong>Valeur</strong> : pour les noeuds textes, il s'agît du texte les composant, par exemple <code>"ajouter le lait"</code>.</li>
+<li><strong>fils</strong> : chaque noeud non-texte a une liste (éventuellement vide) de noeud fils. </li>
+<li><strong>parent</strong>: chaque noeud non-document a un unique noeud parent. </li>
+</ul>
+<p>Voyons comment ces informations se manipulent en Python :</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#attention, téléchargez localement ou réécrivez le fichier recette.xml pour que ce code marche </span>
+<span class="kn">import</span> <span class="nn">xml.dom.minidom</span> <span class="k">as</span> <span class="nn">dom</span>
+
+<span class="c1">#création d&#39;un arbre : </span>
+<span class="n">doc1</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;recette.xml&quot;</span><span class="p">)</span> <span class="c1">#pour importer un fichier xml </span>
+<span class="n">doc2</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">parseString</span><span class="p">(</span><span class="s2">&quot;&lt;a&gt;&lt;b&gt;coucou&lt;/b&gt;&lt;/a&gt;&quot;</span><span class="p">)</span> <span class="c1">#pour transformer une chaîne de caractère bien formée</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>À faire :</strong></p>
+<ul>
+<li>En vous aidant du document papier donné en classe (méthode et attributs), affichez les informations contenues dans doc1.</li>
+<li>Modifier certaines informations de <code>doc1</code>, par exemple démultiplier les quantités.</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
