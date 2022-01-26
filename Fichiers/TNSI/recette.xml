@@ -1,0 +1,17 @@
+<recette difficulté = "facile">
+    <titre>Crèpes sucrées</titre>
+    <temps>1h</temps>
+    <note>pour 10 personnes</note>
+    <ingrédients>
+        <i q = "200g">farine</i>
+        <i q = "40g">sucre</i>
+        <i q = "2">oeufs</i>
+        <i q = "40cL">lait</i>
+    </ingrédients>
+    <étapes>
+        <e>mélanger les ingrédients solides</e>
+        <e>ajouter le lait</e>
+        <e>laisser reposer </e>
+        <e>cuire sur une poêle beurée</e>
+    </étapes>
+</recette>
