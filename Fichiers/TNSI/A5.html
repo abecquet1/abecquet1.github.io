@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Activité arbres</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>A5</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14670,7 +14670,7 @@ False
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Directory</span><span class="p">:</span>
@@ -14826,10 +14826,10 @@ config.txt
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pour réhinitialiser la simulation </span>
@@ -14859,11 +14859,38 @@ config.txt
 <span class="n">touch</span><span class="p">(</span><span class="s2">&quot;mon_projet_de_NSI.py&quot;</span><span class="p">)</span>
 <span class="n">edit</span><span class="p">(</span><span class="s2">&quot;mon_projet_de_NSI.py&quot;</span><span class="p">,</span> <span class="s2">&quot;for i in range(5):</span><span class="se">\n</span><span class="s2">    print(&#39;coucou&#39;)&quot;</span><span class="p">)</span>
 <span class="n">cd</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">cd</span><span class="p">(</span><span class="s2">&quot;programmes&quot;</span><span class="p">)</span>
+<span class="n">python3</span><span class="p">(</span><span class="s2">&quot;mon_projet_de_NSI.py&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>coucou
+coucou
+coucou
+coucou
+coucou
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14878,10 +14905,10 @@ config.txt
     <temps>1h</temps>
     <note>pour 10 personnes</note>
     <ingrédients>
-        <i q = "200g">farine</i>
-        <i q = "40g">sucre</i>
-        <i q = "2">oeufs</i>
-        <i q = "40cL">lait</i>
+        <i q = "200" u = "g">farine</i>
+        <i q = "40" u = "g">sucre</i>
+        <i q = "2" u = "">oeufs</i>
+        <i q = "40"  u = "cL">lait</i>
     </ingrédients>
     <étapes>
         <e>mélanger les ingrédients solides</e>
@@ -14890,6 +14917,7 @@ config.txt
         <e>cuire sur une poêle beurée</e>
     </étapes>
 </recette>
+
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Un document est composé de <strong>balises ouvrantes</strong> comme <code>&lt;recette difficulté = "facile"&gt;</code> et des <strong>balises fermantes</strong> correspondantes comme <code>&lt;/recette&gt;</code>. Ici <code>recette</code> est le <strong>nom</strong> de la balise et <code>difficulté"</code> en est un <strong>attribut</strong> dont la <strong>valeur</strong> est <code>"facile"</code>.</p>
@@ -14919,7 +14947,7 @@ config.txt
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#attention, téléchargez localement ou réécrivez le fichier recette.xml pour que ce code marche </span>
@@ -14940,18 +14968,65 @@ config.txt
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>À faire :</strong></p>
 <ul>
-<li>En vous aidant du document papier donné en classe (méthode et attributs), affichez les informations contenues dans doc1.</li>
+<li>En vous aidant de la fiche distribuée (méthode et attributs des objets DOM), affichez les informations contenues dans doc1.</li>
+<li>Ajouter un ingrédient à la recette ;</li>
+<li>Écrire une fonction récursive multiplier_quantite(node, k) multiplant les quantité de la recette ;</li>
 <li>Modifier certaines informations de <code>doc1</code>, par exemple démultiplier les quantités.</li>
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xml.dom.minidom</span> <span class="k">as</span> <span class="nn">dom</span>
+
+<span class="k">def</span> <span class="nf">remove_whitespace</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="c1">#pour dégager les noeuds remplis de rien </span>
+    <span class="n">rem</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">childNodes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">dom</span><span class="o">.</span><span class="n">Node</span><span class="o">.</span><span class="n">TEXT_NODE</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">nodeValue</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">rem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">rem</span><span class="p">:</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">removeChild</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">childNodes</span><span class="p">:</span>
+        <span class="n">remove_whitespace</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">multiplier_quantite</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1">#multiplie les valeurs (suppposées convertibles en int des attribus q par k)</span>
+    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">dom</span><span class="o">.</span><span class="n">Node</span><span class="o">.</span><span class="n">ELEMENT_NODE</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="n">hasAttribute</span><span class="p">(</span><span class="s2">&quot;q&quot;</span><span class="p">):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;q&quot;</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">childNodes</span><span class="p">:</span>
+        <span class="n">multiplier_quantite</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+
+<span class="c1">#import du xml</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;recette.xml&quot;</span><span class="p">)</span>     
+<span class="n">remove_whitespace</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+
+<span class="c1">#ajout d&#39;un nouvel ingrédient</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s2">&quot;sirop d erable&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="s2">&quot;mL&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">childNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">childNodes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1">#multiplication des quantités</span>
+<span class="n">multiplier_quantite</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">#affichage du xml</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">toprettyxml</span><span class="p">())</span>
+
+<span class="c1">#export du xml </span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;recette_modifiee.xml&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">toprettyxml</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14959,18 +15034,309 @@ config.txt
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;?xml version=&#34;1.0&#34; ?&gt;
+&lt;recette difficulte=&#34;facile&#34;&gt;
+	&lt;titre&gt;Crepes sucrees&lt;/titre&gt;
+	&lt;temps&gt;1h&lt;/temps&gt;
+	&lt;note&gt;pour 10 personnes&lt;/note&gt;
+	&lt;ingredients&gt;
+		&lt;i q=&#34;600&#34; u=&#34;g&#34;&gt;farine&lt;/i&gt;
+		&lt;i q=&#34;120&#34; u=&#34;g&#34;&gt;sucre&lt;/i&gt;
+		&lt;i q=&#34;6&#34; u=&#34;&#34;&gt;oeufs&lt;/i&gt;
+		&lt;i q=&#34;120&#34; u=&#34;cL&#34;&gt;lait&lt;/i&gt;
+		&lt;i q=&#34;30&#34; u=&#34;mL&#34;&gt;sirop d erable&lt;/i&gt;
+	&lt;/ingredients&gt;
+	&lt;etapes&gt;
+		&lt;e&gt;melanger les ingredients solides&lt;/e&gt;
+		&lt;e&gt;ajouter le lait&lt;/e&gt;
+		&lt;e&gt;laisser reposer &lt;/e&gt;
+		&lt;e&gt;cuire sur une poele beuree&lt;/e&gt;
+	&lt;/etapes&gt;
+&lt;/recette&gt;
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="4---Le-format-JSON">4 - Le format JSON<a class="anchor-link" href="#4---Le-format-JSON">&#182;</a></h2><h3 id="Description-du-format">Description du format<a class="anchor-link" href="#Description-du-format">&#182;</a></h3><p>Le format JSON (<em>JavaScript Object Notation</em>) est un autre format arborescent très utilisé sur le web, plus compact et plus flexible que le xml. Voici notre recette, écrite en JSON :</p>
+
+</div>
+</div>{
+    "titre" : "Crepes sucrees",
+    "difficulte" : "facile", 
+    "temps" : { "unite": "min", "valeur" : 1 },
+    "note" : "pour 10 crepes",
+    "ingredients" : [
+        {"nom" : "farine", "q" : {"unite" : "g", "valeur" : 200} }, 
+        {"nom" : "sucre", "q" : {"unite" : "g", "valeur" : 200 } }, 
+        {"nom" : "oeuf", "q" : {"unite" : "", "valeur" : 2} }, 
+        {"nom" : "lait", "q" : {"unite" : "cL", "valeur" : 40} }   
+    ],
+    "etapes": [
+        "melanger les ingredients solides",
+        "ajouter le lait",
+        "laisser reposer",
+        "cuire sur une poele beuree"
+    ]
+}
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Comme on le voit, le format JSON est assez proche de la synatxe des dictionnaires Python. Détaillons un peu. On a quatre types simples utilisable en tant que valeurs :</p>
+<ul>
+<li><code>null</code> (absence de valeur) ;</li>
+<li>les booléens <code>true</code> ou <code>false</code> ;</li>
+<li>les nombres entiers <code>42</code> ou flottants <code>3.14</code> ;</li>
+<li>les chaînes de caractères  <code>"toto</code>.</li>
+</ul>
+<p>On agrège ensuite ces valeurs dans :</p>
+<ul>
+<li>des tableaux dont les valeurs sont d'un des quatre types simple, ou des tableaux, ou des objets ;</li>
+<li>des objets, correpondant à des dictionnaires Python de sorte que <ul>
+<li>les clés soient toujours des chaînes de caractères ;</li>
+<li>les valeurs sont d'un des quatre types simple, ou des tableaux, ou des objets. </li>
+</ul>
+</li>
+</ul>
+<p><strong>Remarque 1</strong> : La possibilité de donner comme valeur d'un tableau ou d'un objet un autre tableau ou un autre objet donne au format JSON une structure arborscente.</p>
+<p><strong>Remarque 2</strong> : Un fichier JSON n'a pas nécessairement de noeud racine.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="JSON-et-Python">JSON et Python<a class="anchor-link" href="#JSON-et-Python">&#182;</a></h3><p>L'import et l'export de fichier JSON se fait en Python à l'aide du module <code>json</code>. On a alors accès aux fonctions :</p>
+<ul>
+<li><code>load(f)</code> charge le fichier <code>f</code> (JSON) dans un dictionnaire Python ;  </li>
+<li><code>dump(d, f)</code> sauvegarde le dictionnaire <code>d</code> au format JSON dans le fichier <code>f</code> ;</li>
+<li><code>dumps(d)</code> renvoie la chaîne de caractère correspondant au fichier JSON issu du dictionnaire <code>d</code>.</li>
+</ul>
+<p>Les fonctions <code>dump</code> et <code>dumps</code> acceptents les paramètres <code>indent = 4</code> et <code>sort_keys = True</code> permettant respectivement d'imprimer les fichiers avec une indentation et en triant les clés des dictionnaires par ordre alphabétique.</p>
+<p>Pour travailler en Python sur un fichier JSON, il suffit donc de svaoir travailler avec un dictionnaire !</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+
+
+<span class="c1"># import du fichier dans un dictionnaire Python</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;recette.json&quot;</span><span class="p">)</span>
+<span class="n">recette</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># modification du dictionnaire</span>
+<span class="n">recette</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;titre modifie&quot;</span>
+
+
+
+<span class="c1"># affichage du fichier JSON correspondant </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">recette</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span> <span class="o">=</span> <span class="kc">True</span><span class="p">))</span>
+
+<span class="c1"># export du JSON dans un nouveau fichier </span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;recette_modifiée.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">recette</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{
+    &#34;difficulte&#34;: &#34;facile&#34;,
+    &#34;etapes&#34;: [
+        &#34;melanger les ingredients solides&#34;,
+        &#34;ajouter le lait&#34;,
+        &#34;laisser reposer&#34;,
+        &#34;cuire sur une poele beuree&#34;
+    ],
+    &#34;ingredients&#34;: [
+        {
+            &#34;nom&#34;: &#34;farine&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;g&#34;,
+                &#34;valeur&#34;: 200
+            }
+        },
+        {
+            &#34;nom&#34;: &#34;sucre&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;g&#34;,
+                &#34;valeur&#34;: 200
+            }
+        },
+        {
+            &#34;nom&#34;: &#34;oeuf&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;&#34;,
+                &#34;valeur&#34;: 2
+            }
+        },
+        {
+            &#34;nom&#34;: &#34;lait&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;cL&#34;,
+                &#34;valeur&#34;: 40
+            }
+        }
+    ],
+    &#34;note&#34;: &#34;pour 10 crepes&#34;,
+    &#34;temps&#34;: {
+        &#34;unite&#34;: &#34;min&#34;,
+        &#34;valeur&#34;: 1
+    },
+    &#34;titre&#34;: &#34;titre modifie&#34;
+}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Si on veut écrire des fonctions récursives sur dictionnaire issu d'un fichier JSON, on devra pour les appels récursifs tester le type des enfants. On peut le faire avec la fonction <code>isinstance(objet, type)</code> testant si <code>objet</code> est de type <code>type</code>.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">multiplier_quantité</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># si le noeud est un dictionnaire, on modifie les valeurs associées à la clé &quot;q&quot; et on appelle récursivement pour les autres</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">att</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="n">att</span> <span class="o">==</span> <span class="s2">&quot;q&quot;</span><span class="p">:</span> 
+                <span class="n">d</span><span class="p">[</span><span class="n">att</span><span class="p">][</span><span class="s2">&quot;valeur&quot;</span><span class="p">]</span> <span class="o">*=</span> <span class="n">k</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="n">multiplier_quantité</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">att</span><span class="p">],</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="c1"># si c&#39;est une liste, on appelle recursivement</span>
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> 
+            <span class="n">multiplier_quantité</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="c1">#pour les types simples, rien ne se passe </span>
+    
+<span class="c1"># import du fichier dans un dictionnaire Python</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;recette.json&quot;</span><span class="p">)</span>
+<span class="n">recette</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#test</span>
+
+<span class="n">multiplier_quantité</span><span class="p">(</span><span class="n">recette</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">recette</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{
+    &#34;titre&#34;: &#34;Crepes sucrees&#34;,
+    &#34;difficulte&#34;: &#34;facile&#34;,
+    &#34;temps&#34;: {
+        &#34;unite&#34;: &#34;min&#34;,
+        &#34;valeur&#34;: 1
+    },
+    &#34;note&#34;: &#34;pour 10 crepes&#34;,
+    &#34;ingredients&#34;: [
+        {
+            &#34;nom&#34;: &#34;farine&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;g&#34;,
+                &#34;valeur&#34;: 1400
+            }
+        },
+        {
+            &#34;nom&#34;: &#34;sucre&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;g&#34;,
+                &#34;valeur&#34;: 1400
+            }
+        },
+        {
+            &#34;nom&#34;: &#34;oeuf&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;&#34;,
+                &#34;valeur&#34;: 14
+            }
+        },
+        {
+            &#34;nom&#34;: &#34;lait&#34;,
+            &#34;q&#34;: {
+                &#34;unite&#34;: &#34;cL&#34;,
+                &#34;valeur&#34;: 280
+            }
+        }
+    ],
+    &#34;etapes&#34;: [
+        &#34;melanger les ingredients solides&#34;,
+        &#34;ajouter le lait&#34;,
+        &#34;laisser reposer&#34;,
+        &#34;cuire sur une poele beuree&#34;
+    ]
+}
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
