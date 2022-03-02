@@ -1,0 +1,45 @@
+{
+    "difficulte": "facile",
+    "etapes": [
+        "melanger les ingredients solides",
+        "ajouter le lait",
+        "laisser reposer",
+        "cuire sur une poele beuree"
+    ],
+    "ingredients": [
+        {
+            "nom": "farine",
+            "q": {
+                "unite": "g",
+                "valeur": 200
+            }
+        },
+        {
+            "nom": "sucre",
+            "q": {
+                "unite": "g",
+                "valeur": 200
+            }
+        },
+        {
+            "nom": "oeuf",
+            "q": {
+                "unite": "",
+                "valeur": 2
+            }
+        },
+        {
+            "nom": "lait",
+            "q": {
+                "unite": "cL",
+                "valeur": 40
+            }
+        }
+    ],
+    "note": "pour 10 crepes",
+    "temps": {
+        "unite": "min",
+        "valeur": 1
+    },
+    "titre": "titre modifie"
+}

@@ -1,0 +1,17 @@
+<recette difficulte = "facile">
+<titre>Crepes sucrees</titre>
+<temps>1h</temps>
+<note>pour 10 personnes</note>
+<ingredients>
+<i q = "200" u = "g">farine</i>
+<i q = "40" u = "g">sucre</i>
+<i q = "2" u = "" >oeufs</i>
+<i q = "40" u = "cL">lait</i>
+</ingredients>
+<etapes>
+<e>melanger les ingredients solides</e>
+<e>ajouter le lait</e>
+<e>laisser reposer </e>
+<e>cuire sur une poele beuree</e>
+</etapes>
+</recette>
