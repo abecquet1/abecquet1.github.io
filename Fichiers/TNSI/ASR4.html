@@ -14582,7 +14582,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># À partir de tableaux d&#39;entiers entre 0 et 255</span>
@@ -14654,14 +14654,67 @@ b&#39;\x04\x01&#39;
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><ol>
-<li>Convertir le tableau <code>[65,66,67]</code> en bytes et afficher le résultat, comment l'expliquer ?</li>
-<li>Convertir le texte <code>"école"</code> en bytes et en afficher la taille. Pourquoi n'obtient-on pas 5 ? </li>
-<li>Convertir l'entier <code>2000</code> en un bytes <code>b</code> (2 octets) et afficher les valeurs de <code>b[1]</code> et <code>b[0]</code>. Retrouver ces valeurs par le calcul.</li>
-</ol>
+<blockquote><p>Q3 - Convertir le tableau <code>[65,66,67]</code> en bytes et afficher le résultat, comment l'expliquer ?</p>
+<p>Q4 - Convertir le texte <code>"école"</code> en bytes et en afficher la taille. Pourquoi n'obtient-on pas 5 ?</p>
+<p>Q5 - Convertir l'entier <code>2000</code> en un bytes <code>b</code> (2 octets) et afficher les valeurs de <code>b[1]</code> et <code>b[0]</code>. Retrouver ces valeurs par le calcul.</p>
 </blockquote>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
+<span class="c1"># Q3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">([</span><span class="mi">65</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">67</span><span class="p">]))</span> <span class="c1"># 65, 66, 67 sont les codes ASCII des caractères A, B, C </span>
+
+<span class="c1"># Q4</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;école&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()))</span> <span class="c1"># On obtient 6 car en utf-8, le caractère &#39;é&#39; est codé sur deux octets</span>
+
+<span class="c1"># Q5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;big&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># retrouvons ces valeurs en écrivant 2000 en base 256 : </span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2000</span><span class="o">%</span><span class="k">256</span>)  # chiffre des unités
+<span class="nb">print</span><span class="p">(</span><span class="mi">2000</span><span class="o">//</span><span class="mi">256</span><span class="p">)</span> <span class="c1"># nombre de paquets de 256</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>b&#39;ABC&#39;
+6
+7 208
+208
+7
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14671,7 +14724,7 @@ b&#39;\x04\x01&#39;
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Chargement des octets composants le fichier &quot;toto.txt&quot; dans un bytes b</span>
@@ -14696,9 +14749,57 @@ b&#39;\x04\x01&#39;
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Q6 - Écrire un script Python comptant le nombre de lettres <code>'a'</code> dans un fichier texte.
-Q7 - Écrire un script Python générant un fichier texte <code>"hello.txt"</code> contenant le texte <code>"hello world!"</code>.</p>
+<blockquote><p>Q6 - Écrire un script Python comptant le nombre de lettres <code>'a'</code> dans un fichier texte.</p>
+<p>Q7 - Écrire un script Python générant un fichier texte <code>"hello.txt"</code> contenant le texte <code>"hello world!"</code>.</p>
 </blockquote>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
+<span class="c1"># Q6</span>
+
+<span class="c1"># import des données</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># décodage en str</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="c1"># on compte les &#39;a&#39; normalement</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+    <span class="n">nb</span><span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nb</span><span class="p">)</span>
+
+<span class="c1"># Q7</span>
+
+<span class="c1"># encodage du texte</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;hello world!&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+
+<span class="c1"># sauvegarde dans le fichier</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="1.3---Donn%C3%A9es-interpr%C3%A9t%C3%A9es,-donn%C3%A9es-encod%C3%A9es,-donn%C3%A9es-chiffr%C3%A9es">1.3 - Donn&#233;es interpr&#233;t&#233;es, donn&#233;es encod&#233;es, donn&#233;es chiffr&#233;es<a class="anchor-link" href="#1.3---Donn%C3%A9es-interpr%C3%A9t%C3%A9es,-donn%C3%A9es-encod%C3%A9es,-donn%C3%A9es-chiffr%C3%A9es">&#182;</a></h3><p>Il est important avant de passer à la suite de bien distinguer les différentes formes sous lesquelles des données peuvent être manipulées. Pour cela, prenons l'exemple d'un lecteur de musique.</p>
 <ul>
 <li>données interprétée : pour notre logiciel, un fichier son est une suite de fréquences à transmette à un système son à intervalle de temps régulié. En Python, on pourrait imaginer garder en mémoire:<ul>
@@ -14854,41 +14955,31 @@ Q7 - Écrire un script Python générant un fichier texte <code>"hello.txt"</cod
 </table>
 <p>Le message chiffré <code>"khoor"</code> se déchiffre ainsi en <code>"hello"</code>.</p>
 <blockquote><p>Q1 - chiffrer le message <code>"bonjour"</code> avec la clé <code>k = 16</code>.</p>
+<p><strong>CORRECTION :</strong></p>
 </blockquote>
 <h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>Informatiquement, il ne sert à rien de ne chiffrer que les lettres. Il est préférable de travailler sur les octets du fichier encodé.</p>
-<blockquote><p>2.a. écrire une fonction <code>cesar(b:bytes, k:int) -&gt; bytes</code> prenant en argument une chaîne d'octets <code>b</code> et une clé entière <code>k</code> et renvoyant la chaîne d'octets obtenue en décalant les octets de <code>k</code> (après 255, on revient à 0).</p>
-</blockquote>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bytes</span><span class="p">:</span>
-    <span class="c1"># à compléter </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Q2.b - Ci-dessous se trouve un <code>bytes</code> chiffré à l'aide de cette fonction avec la clé <code>k = 149</code>. Avec quelle clé peut-on le déchiffrer ?</p>
+<blockquote><p>Q2.a - Écrire une fonction <code>cesar(b:bytes, k:int) -&gt; bytes</code> prenant en argument une chaîne d'octets <code>b</code> et une clé entière <code>k</code> et renvoyant la chaîne d'octets obtenue en décalant les octets de <code>k</code> (après 255, on revient à 0).</p>
 </blockquote>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xd7\x08\xf6\x0c\x05\xc1\xb5\n\x0b\xb5\xf6\t\xb5\x08</span><span class="s1">Y?</span><span class="se">\x0b\t\t\xfe\xb5</span><span class="s1">Y6</span><span class="se">\xb5\xf9</span><span class="s1">Y?</span><span class="se">\xf8\x05\xf9\xfa\x08\xb5\x02\xfa\xb5\x03\xfa\t\t\xf6\xfc\xfa\xb5\xb6\xb5\xdf\xbc\xfa\t\x06</span><span class="s1">Y&gt;</span><span class="se">\x08\xfa\xb5\x07\x0b\xfa\xb5\n\x0b\xb5\n\xbc\xf6\x03\x0b\t\xfa\t\xb5\xf7\xfe\xfa\x04\xb5\xfa\n\xb5\xf7\x05\x04\xb5\xf8\x05\x0b\x08\xf6\xfc\xfa\xb5\x06\x05\x0b\x08\xb5\x02\xf6\xb5\t\x0b\xfe\n\xfa\xb5\xb6</span><span class="s1">&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
+<span class="c1"># Q2.a</span>
+
+<span class="k">def</span> <span class="nf">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bytes</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">[(</span><span class="n">octet</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="k">256</span> for octet in b]
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1">#test</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cesar</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;coucou&quot;</span><span class="p">,</span> <span class="mi">149</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14904,15 +14995,58 @@ Q7 - Écrire un script Python générant un fichier texte <code>"hello.txt"</cod
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>b&#39;\xd7\x08\xf6\x0c\x05\xc1\xb5\n\x0b\xb5\xf6\t\xb5\x08Y?\x0b\t\t\xfe\xb5Y6\xb5\xf9Y?\xf8\x05\xf9\xfa\x08\xb5\x02\xfa\xb5\x03\xfa\t\t\xf6\xfc\xfa\xb5\xb6\xb5\xdf\xbc\xfa\t\x06Y&gt;\x08\xfa\xb5\x07\x0b\xfa\xb5\n\x0b\xb5\n\xbc\xf6\x03\x0b\t\xfa\t\xb5\xf7\xfe\xfa\x04\xb5\xfa\n\xb5\xf7\x05\x04\xb5\xf8\x05\x0b\x08\xf6\xfc\xfa\xb5\x06\x05\x0b\x08\xb5\x02\xf6\xb5\t\x0b\xfe\n\xfa\xb5\xb6&#39;</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>b&#39;dpvdpv&#39;
+</pre>
+</div>
 </div>
 
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>Q2.b - Ci-dessous se trouve un <code>bytes</code> chiffré à l'aide de cette fonction avec la clé <code>k = 149</code>. Avec quelle clé peut-on le déchiffrer ?</p>
+</blockquote>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xd7\x07\xf6\x0b\x04\xb5\xb6\xb5\xe9\n\xb5\xf6\x08\xb5\x07</span><span class="s1">X&gt;</span><span class="se">\n\x08\x08\xfe\xb5</span><span class="s1">X5</span><span class="se">\xb5\xf9</span><span class="s1">X&gt;</span><span class="se">\xf8\xfd\xfe\xfb\xfb\x07\xfa\x07\xb5\x01\xfa\xb5\x02\xfa\x08\x08\xf6\xfc\xfa\xc3\xb5\xdf\xbc\xfa\x08\x05</span><span class="s1">X=</span><span class="se">\x07\xfa\xb5\x06\n\xfa\xb5\t\n\xb5\t\xbc\xf6\x02\n\x08\xfa\x08\xb5\xf7\xfe\xfa\x03\xb5\xfa\t\xb5\xf7\x04\x03\xb5\xf8\x04\n\x07\xf6\xfc\xfa\xb5\x05\x04\n\x07\xb5\x01\xf6\xb5\x08\n\xfe\t\xfa\xb5\xb6</span><span class="s1">&#39;</span>
+
+<span class="c1"># il fut utiliser la clé -149</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">149</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Bravo ! Tu as réussi à déchiffrer le message. J&#39;espère que tu t&#39;amuses bien et bon courage pour la suite !
+</pre>
+</div>
 </div>
 
 </div>
@@ -14930,6 +15064,61 @@ Q7 - Écrire un script Python générant un fichier texte <code>"hello.txt"</cod
 </blockquote>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import du fichier </span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># chiffrement avec la clé secrète 149</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">149</span><span class="p">)</span>
+
+<span class="c1">#export du fichier crypté</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ces_toto.txt&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-50444e122a76&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># import du fichier</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>f <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;toto.txt&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> b <span class="ansi-blue-fg">=</span> f<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> f<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;toto.txt&#39;</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14969,7 +15158,7 @@ Q7 - Écrire un script Python générant un fichier texte <code>"hello.txt"</cod
 $$
 (x\oplus y)\oplus y = x
 $$</p>
-<p>On voit qu'un booléen $y$ peut donc servir de clé de chiffrement pour un autre booléen $x$. Dit comme cela ce n'est pas très intéressant, mais consirérons maintenant l'opération XOR sur un octet (8-bits). Étant donnés deux octets $X$ et $Y$, on obtient l'octet $X\oplus Y$ en effectuant l'opération XOR sur chacuns des 8 bits de $X$ et de $Y$.</p>
+<p>On voit qu'un booléen $y$ peut servir de clé de chiffrement pour un autre booléen $x$. Dit comme cela ce n'est pas très intéressant, mais consirérons maintenant l'opération XOR sur un octet (8-bits). Étant donnés deux octets $X$ et $Y$, on obtient l'octet $X\oplus Y$ en effectuant l'opération XOR sur chacuns des 8 bits de $X$ et de $Y$.</p>
 <p>Prenons un exemple :</p>
 $$
 \begin{array}{cc cccc cccc}
@@ -14999,7 +15188,7 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="mi">234</span>
@@ -15078,7 +15267,7 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sa">b</span><span class="s1">&#39;)</span><span class="se">\xa2\xdb\x17\x00\n\xa4\xc8\x01\x00\x03\x15</span><span class="s1">R</span><span class="se">\x1b\x07</span><span class="s1">N</span><span class="se">\t\x04</span><span class="s1">L</span><span class="se">\x11</span><span class="s1">J</span><span class="se">\x00\x00\x06\xaa\xc4\x13\x04</span><span class="s1">L</span><span class="se">\x15\x0c\x12</span><span class="s1">RUI,</span><span class="se">\x15\x00\x1a\n</span><span class="s1">M@&#39;</span>
@@ -15097,7 +15286,7 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
 
@@ -15187,6 +15376,34 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 <ol>
 <li>Alice et Bob peuvent communiquer avec la <code>grande_clé</code> correspondante.</li>
 </ol>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exemple de lignes générées</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">&quot;identifiant : hdy-gà%jKY)=, cle : u7odiez97&amp;&#39;Rg:.L&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;identifiant : dzfuhuez!;:2, cle : {ocids8_ndsi68uq&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;identifiant : @iuezgd_5&#39;(), cle : 6857651dsqhg87&amp;&amp;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;identifiant : !:;,diusqh[&#39;, cle : </span><span class="si">%%%d</span><span class="s2">oeuzhdez2342&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;identifiant : 1sacrehasard, cle : cestvraimentfou!&quot;</span>     
+<span class="p">]</span>
+
+<span class="c1"># les lignes du tableau sont ensuite chiffrées (50 octets) avec les petites clés et convertie en un seul bytes (N*50 octets) </span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>INSERER SUPER SCHEMA RECAPITULATIF</p>
 <blockquote><p>Q1 - En imaginant que Bob mette environs 10 seconde à casser le chiffrement de la ligne qu'il a choisit, expliquer pourquoi Eve ne pourra pas facilement deviner la clé commune.</p>
 <p>Q2 - Écrire des fonctions Pythons permettant de réaliser les étapes 1, 2 et 4 de la méthode.</p>
@@ -15196,7 +15413,7 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generer</span><span class="p">(</span><span class="n">N</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
@@ -15222,7 +15439,32 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <blockquote><p>Q3 - En passant par le canal public, utilisez cette méthode pour vous mettre d'accord avec votre binôme sur une clé de chiffrement puis échangez-vous quelques message chiffrés à l'aide de cette clé.</p>
 </blockquote>
-<h3 id="3.2-La-m%C3%A9thode-Diffie-Hellman">3.2 La m&#233;thode Diffie-Hellman<a class="anchor-link" href="#3.2-La-m%C3%A9thode-Diffie-Hellman">&#182;</a></h3><h3 id="3.3-Le-chiffrement-RSA">3.3 Le chiffrement RSA<a class="anchor-link" href="#3.3-Le-chiffrement-RSA">&#182;</a></h3>
+<h3 id="3.2-La-m%C3%A9thode-Diffie-Hellman">3.2 La m&#233;thode Diffie-Hellman<a class="anchor-link" href="#3.2-La-m%C3%A9thode-Diffie-Hellman">&#182;</a></h3><h3 id="Principe">Principe<a class="anchor-link" href="#Principe">&#182;</a></h3><p>La méthode de Diffie-Hellman est une autre méthode permettant à Alice et Bob de se mettre d'accord sur une clé. Basée sur des propriétés arithmétiques, elle est à la fois plus rapide et plus sûre que la méthode des puzzles de Merkle.</p>
+<p>Pour fonctionner, cette méthode nécessite l'utilisation d'une certaine fonction à deux variables $M$ telle que :</p>
+<ul>
+<li>$M(M(x,y),z) = M(M(x, z), z)$ ;</li>
+<li>La connaîssance de $x$ et de $M(x, y)$ ne permet pas facilement de retrouver $y$.</li>
+</ul>
+<p>On fait souvent dans cette méthode une analogie avec des couleurs. $M$ représente le mélange entre deux couleurs $x$ et $y$.</p>
+<blockquote><p>Q4 - Expliquer pourquoi le mélange de couleurs correspond bien aux attentes.</p>
+</blockquote>
+<p>Voici le principe de la méthode, expliqué avec des couleurs :</p>
+<ol>
+<li>Alice et Bob disposent d'une couleur publique, disons <code>jaune</code>, connue de tous ;</li>
+<li>Ils choisissent chacun une couleur privée, disons <code>rouge</code> pour Alice et <code>bleu</code> pour Bob ;</li>
+<li>Ils mélangent chacun leur couleur privée avec leur couleur publique et envoient le résultat à l'autre :<ul>
+<li>Alice envoie <code>orange</code> à Bob ;</li>
+<li>Bob envoie <code>vert</code> à Alice ; </li>
+</ul>
+</li>
+<li>Chacun ajoute sa couleur privé au mélange qu'il a reçu et obtient la même couleur finale <code>marron acajou</code>.</li>
+</ol>
+<blockquote><p>Q5 - Expliquer pourquoi Eve ne peut pas facilement obtenir cette même couleur commune.</p>
+</blockquote>
+<h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>En pratique, on peut utiliser comme fonction de mélange l'exponentiation modulaire, c'est à dire, étant donné un certain module $m\geq 2$ :</p>
+$$ M(x,y) = x^y \text{ mod } n $$<p>En effet, les propriétés de l'exponentiation modulaire (l'opération puissance modulo $n$) sont essentiellement les même que l'exponentiation classique et en particulier :</p>
+$$ (x^y)^z \text{ mod } n = x^{yz} \text{ mod } n =  (x^z)^y \text{ mod } n $$<p>En revanche, il est difficile (on ne sait pas le faire de manière efficace) de calculer un logarithme modulaire, c'est à dire de retrouver $y$ à partir de $x^y \text{ mod } n$.</p>
+<h3 id="3.3-Le-chiffrement-RSA">3.3 Le chiffrement RSA<a class="anchor-link" href="#3.3-Le-chiffrement-RSA">&#182;</a></h3>
 </div>
 </div>
 </body>
