@@ -14522,8 +14522,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1---Pr%C3%A9paration">1 - Pr&#233;paration<a class="anchor-link" href="#1---Pr%C3%A9paration">&#182;</a></h2><h3 id="1.1---%C3%89change-de-fichiers-textes-sur-canal-public">1.1 - &#201;change de fichiers textes sur canal public<a class="anchor-link" href="#1.1---%C3%89change-de-fichiers-textes-sur-canal-public">&#182;</a></h3><p>Ce TP a pour objectif de vous faire échanger des messages les uns avec les autres de manière sécurisée par de biais d'un cannal de discussion public. Nous allons pour cela utiliser un thread discord :</p>
-<blockquote><p>Q1 - Connectez-vous au serveur discord et rejoignez le thread CRYPTO (j'espère que ça va marcher avec les raspberry)</p>
+<h2 id="1---Pr%C3%A9paration">1 - Pr&#233;paration<a class="anchor-link" href="#1---Pr%C3%A9paration">&#182;</a></h2><h3 id="1.1---%C3%89change-de-fichiers-textes-sur-canal-public">1.1 - &#201;change de fichiers textes sur canal public<a class="anchor-link" href="#1.1---%C3%89change-de-fichiers-textes-sur-canal-public">&#182;</a></h3><p>Ce TP a pour objectif de vous faire échanger des messages les uns avec les autres de manière sécurisée par le biais d'un cannal de discussion public. Nous allons pour cela utiliser un thread discord :</p>
+<blockquote><p>Q1 - Connectez-vous au serveur discord et rejoignez le thread CRYPTO.</p>
 </blockquote>
 <p>Sur ce thread, vous allez vous échanger des messages sous la forme de fichiers textes. Les consignes suivantes sont à respecter :</p>
 <ul>
@@ -14575,7 +14575,7 @@ a.anchor-link {
 </ul>
 <blockquote><p>Q2 - Regroupez-vous par binomes puis échangez vous sur le thread un message clair en respectant les consignes.</p>
 </blockquote>
-<h3 id="1.2---Type-bytes-en-Python,-encodage">1.2 - Type bytes en Python, encodage<a class="anchor-link" href="#1.2---Type-bytes-en-Python,-encodage">&#182;</a></h3><p>Le type Python <code>bytes</code> correspond à une <strong>chaîne non-mutable et non-modifiable d'octets</strong>, il d'agît d'un type de donné très proche des données brutes manipulées dans une machine ou échangées sur un réseau. Travailler avec de tels objets, plutôt que par exemple avec des chaînes de caractère permet donc de mieux rentrer dans les détails des chiffrements que nous allons voir mais aussi de manipuler des fichiers n'étant pas forcément des textes.</p>
+<h3 id="1.2---Type-bytes,-encodage">1.2 - Type bytes, encodage<a class="anchor-link" href="#1.2---Type-bytes,-encodage">&#182;</a></h3><p>Le type Python <code>bytes</code> correspond à une <strong>chaîne non-mutable et non-modifiable d'octets</strong>, il d'agît d'un type de données très proches des données brutes manipulées dans une machine ou échangées sur un réseau. Travailler avec de tels objets plutôt qu'avec des chaînes de caractères permet de mieux apréhender les algorthmes de chiffrements que nous allons voir mais aussi de manipuler des fichiers n'étant pas forcément des textes.</p>
 <p>On peut construire des objets de ce type de plusieurs manières :</p>
 
 </div>
@@ -14600,7 +14600,7 @@ a.anchor-link {
 
 <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;élève&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span> 
-<span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>   <span class="c1"># les méthodes encodes et décode peuvent prendre en argument le format d&#39;encodage, par défaut, il s&#39;agît de l&#39;utf-8</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>   <span class="c1"># les méthodes encodes et décode peuvent prendre en argument le format d&#39;encodage mais par défaut il s&#39;agît de l&#39;utf-8</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -14716,7 +14716,7 @@ b&#39;\x04\x01&#39;
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Afin de lire et écrire dans nos fichiers textes en Pyhton, nous utiliserons le script suivant :</p>
+<p>Afin de lire et écrire dans nos fichiers textes en Python, nous utiliserons les fonctions suivantes :</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14725,18 +14725,19 @@ b&#39;\x04\x01&#39;
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Chargement des octets composants le fichier &quot;toto.txt&quot; dans un bytes b</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f_read</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;chargement du fichier file_name dans un bytes&quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>   <span class="c1"># ouvre un flux de données binaires en lecture provenant de &quot;toto.txt&quot; </span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>                <span class="c1"># stocke le contenu du fichier dans un bytes b </span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                   <span class="c1"># coupe le flux</span>
+    <span class="k">return</span> <span class="n">b</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>  <span class="c1"># ouvre un flux de données binaires en lecture provenant de &quot;toto.txt&quot; </span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>                <span class="c1"># stocke le contenu du fichier dans un bytes b </span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                   <span class="c1"># coupe le flux</span>
 
-
-<span class="c1">### Sauvegarde des octets du bytes b dans le fichier &quot;toto.txt&quot;</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>  <span class="c1"># ouvre un flux de données binaires en lecture provenant de &quot;toto.txt&quot; </span>
-<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>                  <span class="c1"># stocke le contenu du fichier dans un bytes b </span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                   <span class="c1"># coupe le flux</span>
+<span class="k">def</span> <span class="nf">f_write</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">bytes</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;sauvegarde du bytes b dans le fichier file_name&quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>   <span class="c1"># ouvre un flux de données binaires en lecture provenant de &quot;toto.txt&quot; </span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>                  <span class="c1"># stocke le contenu du fichier dans un bytes b </span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                   <span class="c1"># coupe le flux</span>
 </pre></div>
 
      </div>
@@ -14765,11 +14766,7 @@ b&#39;\x04\x01&#39;
 <span class="c1"># Q6</span>
 
 <span class="c1"># import des données</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="c1"># décodage en str</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f_read</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 
 <span class="c1"># on compte les &#39;a&#39; normalement</span>
@@ -14785,9 +14782,7 @@ b&#39;\x04\x01&#39;
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;hello world!&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
 
 <span class="c1"># sauvegarde dans le fichier</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">f_write</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14821,25 +14816,25 @@ b&#39;\x04\x01&#39;
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="1.3---Donn%C3%A9es-interpr%C3%A9t%C3%A9es,-donn%C3%A9es-encod%C3%A9es,-donn%C3%A9es-chiffr%C3%A9es">1.3 - Donn&#233;es interpr&#233;t&#233;es, donn&#233;es encod&#233;es, donn&#233;es chiffr&#233;es<a class="anchor-link" href="#1.3---Donn%C3%A9es-interpr%C3%A9t%C3%A9es,-donn%C3%A9es-encod%C3%A9es,-donn%C3%A9es-chiffr%C3%A9es">&#182;</a></h3><p>Il est important avant de passer à la suite de bien distinguer les différentes formes sous lesquelles des données peuvent être manipulées. Pour cela, prenons l'exemple d'un lecteur de musique.</p>
 <ul>
-<li>données interprétée : pour notre logiciel, un fichier son est une suite de fréquences à transmette à un système son à intervalle de temps régulié. En Python, on pourrait imaginer garder en mémoire:<ul>
-<li>le nombre <code>N</code> (<code>int</code>) de sons joués par seconde ;</li>
-<li>un tableau <code>t</code> dont les valeurs sont de type <code>float</code>, la liste de toutes les fréquences à jouer.</li>
+<li>Données interprétées : pour notre logiciel, un fichier son est une suite de fréquences à transmette à un système son à intervalle de temps régulié. En Python, on pourrait imaginer garder en mémoire:<ul>
+<li>le nombre <code>N:int</code> de sons joués par seconde ;</li>
+<li>un tableau <code>t:list[float]</code>, la liste de toutes des à jouer, dans l'ordre.</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>données encodées : pour garder en mémoire un fichier son sur un ordinateur, celui-ci doit être mis sous la forme d'une suite de bits 0/1 ou encore d'une suites d'octets, on parle alors de fichier <strong>encodé</strong>. La méthode permettant de passer de données interprétées à des données encodées est appelé le <strong>format d'encodage</strong>, il donne généralement son extention au fichier.<ul>
+<li>Données encodées : pour garder en mémoire un fichier son sur un ordinateur, celui-ci doit être mis sous la forme d'une suite de bits ou encore d'une suites d'octets, on parle alors de fichier <strong>encodé</strong>. La méthode permettant de passer de données interprétées à des données encodées est appelé le <strong>format d'encodage</strong>, il donne généralement son extention au fichier.<ul>
 <li>dans notre exemple, on peut encoder notre fichier au format mp3, wav, wma, midi, etc. ;</li>
-<li>pour encoder des nombre relatif, on peut utiliser le complément à deux sur un certain nombre de bits (ce n'est pas ce que fait Python) ;</li>
+<li>pour encoder des nombres relatif, on peut utiliser le complément à deux sur un certain nombre de bits (ce n'est pas ce que fait Python) ;</li>
 <li>pour encoder des flottants, on utilise le format IEEE754 simple ou double ;</li>
 <li>pour encoder un texte, on peut utiliser selon le texte les formats ASCII, latin-$n$, UTF-8, UTF-16, UTF-32, etc.</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>données chiffrées : si on veut envoyer par mail un fichier sensible <code>"top_secret.mp3"</code>, on a tout intérêt à le modifier de sorte qu'une personne malveillance qui intercepterait le mail ne puisse pas le lire sans en avoir l'autorisation. On va donc générer un nouveau fichier <code>"top_secret_crypte"</code> (l'extention n'a pas d'importance) à partir des octets de <code>"top_secret.mp3"</code> à l'aide d'un <strong>algorithme de chiffrement</strong>, et c'est ce fichier que l'on va envoyer. Le destinataire, avec qui on se sera miis d'accord au préalable, devra alors déchiffrer le fichier avant de le lancer avec son propre lecteur.</li>
+<li>Données chiffrées : si on veut envoyer par mail un fichier sensible <code>"top_secret.mp3"</code>, on a tout intérêt à le modifier de sorte qu'une personne malveillante qui intercepterait le mail ne puisse pas le lire sans en avoir l'autorisation. On va donc générer un nouveau fichier <code>"top_secret_crypte"</code> (l'extention n'a pas d'importance) à partir des octets de <code>"top_secret.mp3"</code> à l'aide d'un <strong>algorithme de chiffrement</strong>. C'est ce fichier que l'on va envoyer. Le destinataire, avec qui on se sera miis d'accord au préalable, devra alors déchiffrer le fichier avant de le lancer avec son propre lecteur.</li>
 </ul>
-<p><img src="encodage.jpg" alt="Super schéma récapitulatif"></p>
+<p><img src="encodage.jpg" alt="Super schéma 1"></p>
 
 </div>
 </div>
@@ -14910,7 +14905,7 @@ b&#39;\x04\x01&#39;
 </tbody>
 </table>
 <p>Le message <code>"coucou"</code> est chiffré en <code>"frxfrx"</code>.</p>
-<p>À l'inverse, une personne voulant déchiffrer un message devra alors savoir que le texte original a subit un décalage de 3 pour pouvoir le déchiffrer à l'aide du tableau inverse :</p>
+<p>À l'inverse, une personne voulant déchiffrer un message devra alors savoir que le texte original a subi un décalage de 3 pour pouvoir le déchiffrer à l'aide du tableau inverse :</p>
 <table>
 <thead><tr>
 <th>a</th>
@@ -15041,6 +15036,10 @@ b&#39;\x04\x01&#39;
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xd7\x07\xf6\x0b\x04\xb5\xb6\xb5\xe9\n\xb5\xf6\x08\xb5\x07</span><span class="s1">X&gt;</span><span class="se">\n\x08\x08\xfe\xb5</span><span class="s1">X5</span><span class="se">\xb5\xf9</span><span class="s1">X&gt;</span><span class="se">\xf8\xfd\xfe\xfb\xfb\x07\xfa\x07\xb5\x01\xfa\xb5\x02\xfa\x08\x08\xf6\xfc\xfa\xc3\xb5\xdf\xbc\xfa\x08\x05</span><span class="s1">X=</span><span class="se">\x07\xfa\xb5\x06\n\xfa\xb5\t\n\xb5\t\xbc\xf6\x02\n\x08\xfa\x08\xb5\xf7\xfe\xfa\x03\xb5\xfa\t\xb5\xf7\x04\x03\xb5\xf8\x04\n\x07\xf6\xfc\xfa\xb5\x05\x04\n\x07\xb5\x01\xf6\xb5\x08\n\xfe\t\xfa\xb5\xb6</span><span class="s1">&#39;</span>
 
+<span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
 <span class="c1"># il fut utiliser la clé -149</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">149</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 </pre></div>
@@ -15082,59 +15081,34 @@ b&#39;\x04\x01&#39;
 </blockquote>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import du fichier </span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
 
-<span class="c1"># chiffrement avec la clé secrète 149</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">149</span><span class="p">)</span>
+<span class="c1"># chiffrement</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f_read</span><span class="p">(</span><span class="s2">&quot;toto.txt&quot;</span><span class="p">)</span>      <span class="c1"># import du fichier </span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">149</span><span class="p">)</span>           <span class="c1"># chiffrement avec la clé secrète 149</span>
+<span class="n">f_write</span><span class="p">(</span><span class="s2">&quot;ces_toto.txt&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># export du fichier crypté</span>
 
-<span class="c1">#export du fichier crypté</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ces_toto.txt&quot;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># déchiffrement </span>
+
+<span class="c1"># chiffrement</span>
+
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">f_read</span><span class="p">(</span><span class="s2">&quot;ces_titi.txt&quot;</span><span class="p">)</span>  <span class="c1"># import du fichier </span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">cesar</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">149</span><span class="p">)</span>          <span class="c1"># déchiffrement avec la clé secrète 149</span>
+<span class="n">f_write</span><span class="p">(</span><span class="s2">&quot;tutu.txt&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>      <span class="c1">#export du fichier décrypté</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">c:\Users\Admin\OneDrive\Documents\GitHub\abecquet1.github.io\Fichiers\TNSI\ASR4.ipynb Cell 16&#39;</span> in <span class="ansi-cyan-fg">&lt;cell line: 10&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/Admin/OneDrive/Documents/GitHub/abecquet1.github.io/Fichiers/TNSI/ASR4.ipynb#ch0000015?line=6&#39;&gt;7&lt;/a&gt;</span> b = cesar(b, 149)
-<span class="ansi-green-fg">      &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/Admin/OneDrive/Documents/GitHub/abecquet1.github.io/Fichiers/TNSI/ASR4.ipynb#ch0000015?line=8&#39;&gt;9&lt;/a&gt;</span> #export du fichier crypté
-<span class="ansi-green-intense-fg ansi-bold">---&gt; &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/Admin/OneDrive/Documents/GitHub/abecquet1.github.io/Fichiers/TNSI/ASR4.ipynb#ch0000015?line=9&#39;&gt;10&lt;/a&gt;</span> f = open(&#34;ces_toto.txt&#34;)
-<span class="ansi-green-fg">     &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/Admin/OneDrive/Documents/GitHub/abecquet1.github.io/Fichiers/TNSI/ASR4.ipynb#ch0000015?line=10&#39;&gt;11&lt;/a&gt;</span> f.write(b)
-<span class="ansi-green-fg">     &lt;a href=&#39;vscode-notebook-cell:/c%3A/Users/Admin/OneDrive/Documents/GitHub/abecquet1.github.io/Fichiers/TNSI/ASR4.ipynb#ch0000015?line=11&#39;&gt;12&lt;/a&gt;</span> f.close()
-
-<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;ces_toto.txt&#39;</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15200,7 +15174,7 @@ $$
 \hline
 =&amp;&amp;1&amp;1&amp;1&amp;0&amp; &amp;0&amp;1&amp;0&amp;1\\
 \end{array}
-$$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être utilisé entre deux entiers, l'opération étant effectuée bit par bit de leur écriture binaire.</p>
+$$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être utilisé entre deux entiers, l'opération étant effectuée bit par bit.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15260,35 +15234,24 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </blockquote>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">xor</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">byte</span><span class="p">:</span>
-    <span class="k">pass</span> <span class="c1"># à compléter </span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Q5.b - Ci-dessous se trouve un <code>bytes</code> chiffré à l'aide de cette fonction avec la clé <code>k = "martingale"</code>. Avec quelle clé peut-on le déchiffrer ?</p>
-</blockquote>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sa">b</span><span class="s1">&#39;)</span><span class="se">\xa2\xdb\x17\x00\n\xa4\xc8\x01\x00\x03\x15</span><span class="s1">R</span><span class="se">\x1b\x07</span><span class="s1">N</span><span class="se">\t\x04</span><span class="s1">L</span><span class="se">\x11</span><span class="s1">J</span><span class="se">\x00\x00\x06\xaa\xc4\x13\x04</span><span class="s1">L</span><span class="se">\x15\x0c\x12</span><span class="s1">RUI,</span><span class="se">\x15\x00\x1a\n</span><span class="s1">M@&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
+<span class="k">def</span> <span class="nf">xor</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+  <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="k">len</span>(k)] for i in range(len(b))]
+  <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;coucou les amis&quot;</span><span class="p">,</span> <span class="s2">&quot;ant&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;ant&quot;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15304,15 +15267,64 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>b&#39;)\xa2\xdb\x17\x00\n\xa4\xc8\x01\x00\x03\x15R\x1b\x07N\t\x04L\x11J\x00\x00\x06\xaa\xc4\x13\x04L\x15\x0c\x12RUI,\x15\x00\x1a\nM@&#39;</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>b&#39;\x02\x01\x01\x02\x01\x01A\x02\x11\x12N\x15\x0c\x07\x07&#39;
+b&#39;coucou les amis&#39;
+</pre>
+</div>
 </div>
 
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<blockquote><p>Q5.b - Ci-dessous se trouve un <code>bytes</code> chiffré à l'aide de cette fonction avec la clé <code>k = "martingale"</code>. Avec quelle clé peut-on le déchiffrer ?</p>
+</blockquote>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;)</span><span class="se">\xa2\xdb\x17\x00\n\xa4\xc8\x01\x00\x03\x15</span><span class="s1">R</span><span class="se">\x1b\x07</span><span class="s1">N</span><span class="se">\t\x04</span><span class="s1">L</span><span class="se">\x11</span><span class="s1">J</span><span class="se">\x00\x00\x06\xaa\xc4\x13\x04</span><span class="s1">L</span><span class="se">\x15\x0c\x12</span><span class="s1">RUI,</span><span class="se">\x15\x00\x1a\n</span><span class="s1">M@&#39;</span>
+
+<span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
+<span class="c1"># Il suffit d&#39;utiliser la même clé, &quot;martingale&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;martingale&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Décidément on ne t&#39;arrête pas ! Bravo !
+</pre>
+</div>
 </div>
 
 </div>
@@ -15392,9 +15404,8 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 <li>Bob envoie à Alice et en clair l'<code>identifiant</code> de la ligne.</li>
 </ol>
 <ol>
-<li>Alice et Bob peuvent communiquer avec la <code>grande_clé</code> correspondante.</li>
+<li>Alice et Bob peuvent communiquer avec la <code>grande_clé</code> correspondante (Alice retrouvant la clé à l'aide de son identifiant).</li>
 </ol>
-<p><img src="merkle.jpg" alt="Super schéma incroyaaaaaable"></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15412,7 +15423,7 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
   <span class="s2">&quot;identifiant : 1sacrehasard, cle : cestvraimentfou!&quot;</span>     
 <span class="p">]</span>
 
-<span class="c1"># les lignes du tableau sont ensuite chiffrées (50 octets) avec les petites clés et convertie en un seul bytes (N*50 octets) </span>
+<span class="c1"># les lignes du tableau sont ensuite chiffrées (50 octets) avec les petites clés et converties en un seul bytes (N*50 octets) </span>
 </pre></div>
 
      </div>
@@ -15423,28 +15434,80 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="merkle.jpg" alt="Super schéma 2"></p>
 <blockquote><p>Q1 - En imaginant que Bob mette environs 10 seconde à casser le chiffrement de la ligne qu'il a choisit, expliquer pourquoi Eve ne pourra pas facilement deviner la clé commune.</p>
-<p>Q2 - Écrire des fonctions Pythons permettant de réaliser les étapes 1, 2 et 4 de la méthode.</p>
+<p>Q2 - Écrire des fonctions Pythons permettant de réaliser les étapes 1, 2, 4 et 6 de la méthode.</p>
 </blockquote>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generer</span><span class="p">(</span><span class="n">N</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##############</span>
+<span class="c1"># CORRECTION #</span>
+<span class="c1">##############</span>
+
+<span class="c1"># Q1 Eve va devoir déchiffres TOUTES les lignes afin de connaître la clé correspondant à l&#39;indentifiant échangé (puisque tout est chiffré)</span>
+<span class="c1"># Si il met autant de temps que Bob pour déchiffrer un ligne, cela lui prendra au pire N*10 secondes pour trouver la clé</span>
+<span class="c1"># Pour N=10000 cela donne 100000 secondes, soit environs un jour de calcul</span>
+
+<span class="c1"># Q2</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">chaine_alea</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;génère un str aleatoire de taille n dont les caractères ont un code unicode entre a et b (inclus)&quot;&quot;&quot;</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span><span class="o">+=</span><span class="nb">chr</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">s</span>
+
+<span class="k">def</span> <span class="nf">generer</span><span class="p">(</span><span class="n">N</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;renvoie le tableau des id, K, k&quot;&quot;&quot;</span>
-    <span class="k">pass</span> <span class="c1"># à compléter</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+      <span class="n">i</span> <span class="o">=</span> <span class="n">chaine_alea</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">126</span><span class="p">)</span>
+      <span class="n">K</span> <span class="o">=</span> <span class="n">chaine_alea</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">126</span><span class="p">)</span>
+      <span class="n">k</span> <span class="o">=</span> <span class="n">chaine_alea</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">t</span>
 
-<span class="k">def</span> <span class="nf">chiffrer</span><span class="p">(</span><span class="n">t</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span><span class="o">-&gt;</span><span class="nb">bytes</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">chiffrer</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bytes</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;chiffre le tableau ligne par ligne avec les petites clés&quot;&quot;&quot;</span>
-    <span class="k">pass</span> <span class="c1"># à compléter</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+      <span class="n">ligne</span> <span class="o">=</span> <span class="s2">&quot;identifiant : &quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s2">&quot;, cle : &quot;</span><span class="o">+</span><span class="n">K</span>
+      <span class="n">b</span><span class="o">+=</span> <span class="n">xor</span><span class="p">(</span><span class="n">ligne</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">b</span>
 
-<span class="k">def</span> <span class="nf">choix</span><span class="p">(</span><span class="nb">bytes</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="k">def</span> <span class="nf">choix</span><span class="p">(</span><span class="n">b</span><span class="p">:</span><span class="nb">bytes</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">tuple</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;choisit une ligne du tableau, casse le chiffrement et renvoie la clé et son identifiant&quot;&quot;&quot;</span>
-    <span class="k">pass</span> <span class="c1"># à compléter</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">//</span><span class="mi">50</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">50</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">50</span><span class="p">]</span>
+    <span class="n">lettres</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">91</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="n">lettres</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">B</span> <span class="ow">in</span> <span class="n">lettres</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">lettres</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">D</span> <span class="ow">in</span> <span class="n">lettres</span><span class="p">:</span>
+            <span class="n">ligne</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">+</span><span class="n">C</span><span class="o">+</span><span class="n">D</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ligne</span><span class="p">[:</span><span class="mi">14</span><span class="p">]</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;identifiant : &quot;</span><span class="p">:</span>
+              <span class="k">return</span> <span class="p">(</span><span class="n">ligne</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">14</span><span class="o">+</span><span class="mi">12</span><span class="p">],</span> <span class="n">ligne</span><span class="p">[</span><span class="o">-</span><span class="mi">16</span><span class="p">:])</span>
+
+<span class="k">def</span> <span class="nf">retrouver</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">K</span>
+  <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">generer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">chiffrer</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">choix</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;clé choisie par Bob :&quot;</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;identifiant correspondant :&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;clé retrouvée par Alice :&quot;</span><span class="p">,</span> <span class="n">retrouver</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">decode</span><span class="p">()))</span>
 </pre></div>
 
      </div>
@@ -15452,10 +15515,33 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>clé choisie par Bob : 0{N,Cu~ot_Bk%#+]
+identifiant correspondant : }Uk2Lb`ryDMJ
+clé retrouvée par Alice : 0{N,Cu~ot_Bk%#+]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p>Q3 - En passant par le canal public, utilisez cette méthode pour vous mettre d'accord avec votre binôme sur une clé de chiffrement puis échangez-vous quelques message chiffrés à l'aide de cette clé.</p>
+<blockquote><p>Q3 - En passant par le canal public, utilisez cette méthode pour vous mettre d'accord avec votre binôme sur une clé de chiffrement puis échangez-vous quelques messages chiffrés à l'aide de cette clé.</p>
 </blockquote>
 <h3 id="3.2-La-m%C3%A9thode-Diffie-Hellman">3.2 La m&#233;thode Diffie-Hellman<a class="anchor-link" href="#3.2-La-m%C3%A9thode-Diffie-Hellman">&#182;</a></h3><h3 id="Principe">Principe<a class="anchor-link" href="#Principe">&#182;</a></h3><p>La méthode de Diffie-Hellman est une autre méthode permettant à Alice et Bob de se mettre d'accord sur une clé. Basée sur des propriétés arithmétiques, elle est à la fois plus rapide et plus sûre que la méthode des puzzles de Merkle.</p>
 <p>Pour fonctionner, cette méthode nécessite l'utilisation d'une certaine fonction à deux variables $M$ telle que :</p>
@@ -15475,15 +15561,145 @@ $$<p>En Python, l'opérateur XOR a pour symbole <code>^</code> et peut être uti
 <li>Bob envoie <code>vert</code> à Alice ; </li>
 </ul>
 </li>
-<li>Chacun ajoute sa couleur privé au mélange qu'il a reçu et obtient la même couleur finale <code>marron acajou</code>.</li>
+<li>Chacun ajoute sa couleur privée au mélange qu'il a reçu et obtient la même couleur finale <code>marron acajou</code>.</li>
 </ol>
 <blockquote><p>Q5 - Expliquer pourquoi Eve ne peut pas facilement obtenir cette même couleur commune.</p>
 </blockquote>
-<h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>En pratique, on peut utiliser comme fonction de mélange l'exponentiation modulaire, c'est à dire, étant donné un certain module $m\geq 2$ :</p>
-$$ M(x,y) = x^y \text{ mod } n $$<p>En effet, les propriétés de l'exponentiation modulaire (l'opération puissance modulo $n$) sont essentiellement les même que l'exponentiation classique et en particulier :</p>
-$$ (x^y)^z \text{ mod } n = x^{yz} \text{ mod } n =  (x^z)^y \text{ mod } n $$<p>En revanche, il est difficile (on ne sait pas le faire de manière efficace) de calculer un logarithme modulaire, c'est à dire de retrouver $y$ à partir de $x^y \text{ mod } n$.</p>
-<h3 id="3.3-Le-chiffrement-RSA">3.3 Le chiffrement RSA<a class="anchor-link" href="#3.3-Le-chiffrement-RSA">&#182;</a></h3>
+<h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>En pratique, on peut utiliser comme fonction de mélange l'exponentiation modulaire, c'est à dire, étant donné un certain module $p\geq 2$ premier :</p>
+$$ M(g,a) = g^a \text{ mod } p $$<p>En effet, les propriétés de l'exponentiation modulaire (l'opération puissance modulo $n$) sont essentiellement les même que l'exponentiation classique et en particulier :</p>
+$$ 
+\begin{align}
+M(M(g, a),b) &amp;= (g^a)^b \text{ mod } p \\
+             &amp;= g^{ab} \text{ mod } p \\
+             &amp;=  (g^b)^a \text{ mod } p \\ 
+             &amp;= M(M(g,b),a)
+\end{align}
+$$<p>En revanche, il est difficile (on ne sait pas le faire de manière efficace) de calculer un logarithme modulaire, c'est à dire de retrouver $a$ à partir de $g^a \text{ mod } p$.</p>
+<p>Pour mettre en oeuvre la méthode on procède comme suit :</p>
+<ul>
+<li>$p$ et $g$ sont des nombres publics ; <ul>
+<li>$p$ est le module du chiffrement ;</li>
+<li>$g$ est la base du chiffrement (<code>jaune</code> dans l'exemple) ;</li>
+</ul>
+</li>
+<li>Alice et Bob gènèrent des nombres privés respectivement $a$ et $b$ (<code>rouge</code> et <code>bleu</code> dans l'exemple).</li>
+<li>Alice et Bob s'échangent $M(g, a)$ et $M(g, b)$ ;</li>
+<li>La clé commune secrète est $M(M(g, a),b) = M(M(g,b),a)$</li>
+</ul>
+<blockquote><p>Q6.a - À l'aide de la fonction <code>pow</code> (voir la <a href = "https://docs.python.org/fr/3/library/functions.html#pow">documentation</a>) écrire une fonction <code>melange(g: int, a:int, p:int)</code> générant un bytes de 4 octets encodant l'entier $g^a\text{ mod }p$.</p>
+</blockquote>
+<p>Nous travaillerons avec les valeurs publiques <code>p = 1364603701</code> et <code>g = 382417751</code> (tous les nombres générés seront encodables sur 4 octets).</p>
+<blockquote><p>Q6.b - Générez un nombre <code>a</code> aléatoire entre <code>0</code> et <code>p-1</code> : ce nombre est secret.</p>
+<p>Q6.c - À l'aide de votre fonction <code>melange</code> envoyez en clair à votre binome un fichier de 4 octets correspondant au mélange de votre clé privée <code>a</code> avec la clé publique <code>g</code>.</p>
+<p>Q6.d - Décodez le fichier de votre binome et mélanger le résultat avec votre propre clé privée. Le résultat est votre clé de chiffrement commune de 4 octets à interpréter comme un entier ou une chaîne de caractère en fonction d'algorithme de chiffrement souhaité.</p>
+</blockquote>
+
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">melange</span><span class="p">(</span><span class="n">g</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bytes</span><span class="p">:</span>
+  <span class="k">pass</span> <span class="c1"># à compléter</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1364603701</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">382417751</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="3.3---Chiffrement-RSA">3.3 - Chiffrement RSA<a class="anchor-link" href="#3.3---Chiffrement-RSA">&#182;</a></h3><h3 id="Principe">Principe<a class="anchor-link" href="#Principe">&#182;</a></h3><p>Le chiffrement RSA utilise également des propriétés arithmétiques des entiers pour fonctionner. Voici dans les grandes lignes son fonctionnement :</p>
+<ul>
+<li>Alice génère trois nombres, appelés clés RSA : $n$, $e$ et $d$. </li>
+<li>Le couple $(n, e)$ constitue la clé publique de Alice, elle le partage en clair à tout le monde.</li>
+<li>Le couple $(n, d)$ constitue la clé privée d'Alice. Elle le le partage à personne.</li>
+</ul>
+<p>Ces trois nombres sont liés par la propriété suivante :
+$$ \forall m \leq n,\text{ }(m^e)^d \text{ mod }n = (m^d)^e\text{ mod }n = m $$</p>
+<p>Propriété qu'on peut aussi noter : 
+$$ \forall M\text{ }, K^\text{priv}.K^\text{pub}.M = K^\text{pub}.K^\text{priv}.M = M $$</p>
+<p>Cette propriété offre deux possibilités très intéressantes :</p>
+<ol>
+<li><p>Bob peut chiffrer un message $M$ à l'aide de la clé publique d'Alice : $M' = K_{\text{Alice}}^\text{pub}.M$. Alice sera la seule personne capable de déchiffrer ce message à l'aide de sa clé privée : $M = K_{\text{Alice}}^\text{priv}.M'$.</p>
+</li>
+<li><p>Alice peut chiffrer un message à l'aide de sa clé privée : $M' = K_{\text{Alice}}^\text{priv}.M$. Toute personne pourra déchiffrer ce message à l'aide de la clé publique d'Alice : $M = K_{\text{Alice}}^\text{pub}.M'$.</p>
+</li>
+</ol>
+<p>La première permet évidemment de communiquer de manière sûre de Bob vers Alice. Pour communiquer de manière sûre de Alice vers Bob, il suffit que Bob génère ces propres clés RSA.</p>
+<p>La seconde paraît moins utile puisque tout le monde peut déchiffrer le message. On peut cependant en tirer profit en remarquant que seule Alice peut envoyer un message, par exemple <code>"coucou"</code>, correctement chiffré par cette méthode. Toute personne pouvant déchiffrer le message <code>"coucou"</code> à l'aide de la clé publique l'Alice est assuré qu'il a effectivement affaire à Alice. C'est le principe des certificats que nous allons voir dans la partie suivante.</p>
+<h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>On vous met à disposition un module RSA dont voici l'interface :</p>
+<table>
+<thead><tr>
+<th>fonction</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generer_cles(taille:int) -&gt; tuple</code></td>
+<td>gérère le triplet de clés RSA $(n, e, d)$</td>
+</tr>
+<tr>
+<td><code>exporter_cle(n:int, k:int) -&gt; bytes</code></td>
+<td>transforme la clé $(n, k)$ où $k = e$ ou $d$ en bytes</td>
+</tr>
+<tr>
+<td><code>importer_cle(b:bytes) -&gt; tuple</code></td>
+<td>transforme le bytes <code>b</code> en clé $(n, k)$ où $k = e$ ou $d$</td>
+</tr>
+<tr>
+<td><code>chiffrer(b:bytes, n:int, k:int) -&gt; bytes</code></td>
+<td>chiffre le bytes <code>b</code> à l'aide de la clé $(n, k)$ où $k = e$ ou $d$</td>
+</tr>
+<tr>
+<td><code>dechiffrer(b:bytes, n:int, k:int) -&gt; bytes</code></td>
+<td>déchiffre le bytes <code>b</code> à l'aide de la clé $(n, k)$ où $k = e$ ou $d$</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>Q7.a - Téléchargez le module RSA et importez-le dans un programme Python.</p>
+<p>Q7.b - Générez des clés $n$, $e$, $d$ puis sauvegardez-les dans deux fichiers <code>toto_pubkey.rsa</code> et <code>toto_privkey.rsa</code> (remplacez <code>toto</code> par votre prénom...) contenant les clés publiques $(n,e)$ et privées $(n,d)$.</p>
+<p>Q7.c - Partagez votre fichier de clé publique <code>toto_pubkey.rsa</code> sur le canal public. Tout le monde peut maintenant vous envoyer des messages chiffrés.</p>
+<p>Q7.d -  Téléchargez le fichier de clé publique de votre binome et importer la clé $(n_{B}, e_{B})$ dans un programme Python.  Vous pouvez maintenant envoyer des message chiffrés à votre binome.</p>
+</blockquote>
+<p>En réalité, le chiffrement RSA est trop lent pour servir de chiffrement pour être utilisé pour chiffrer un grand flux de données (discussion, vocale, vidéo, stream, remote play, etc.).</p>
+<p>Sa sureté et sa capacité à générer des certificats d'authentification en font cependant un excellent moyen d'échanger la clé commune d'une méthode de chiffrement symétrique (plus rapide).</p>
+<blockquote><p>Q8.a - Comment Alice et Bob peuvent utiliser RSA pour se mettre d'accord sur une clé de chiffrement XOR ?</p>
+<p>Q8.b - Appliquer cette méthode avec votre binome.</p>
+</blockquote>
+<h2 id="4---Authentification">4 - Authentification<a class="anchor-link" href="#4---Authentification">&#182;</a></h2><p>Comme expliqué précédemment, le chiffrement RSA permet d'assurer qu'un message donné provient bien d'une personne ayant généré une certaine clé publique. Si c'est bien Alice qui a généré une clé, il lui suffit d'envoyer un message crypté pour prouver son identité.</p>
+<p>En revanche, comment s'assurer que la clé publique dont on se sert a bien été générée par Alice ?</p>
+<p>On utilise pour cela une troisième personne Théo, considérée comme étant de confiance et pouvant attester de l'identité d'Alice. La méthode est la suivante :</p>
+<ol>
+<li>Théo génère ses clés $(n_T, e_T, d_T)$ et partage sa clé publique $(n_T, e_T)$. </li>
+<li>Théo génère un certificat $S = K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub}$ à Alice en chiffrant la clé publique d'Alice avec sa propre clé privée. </li>
+<li>Si Bob veut vérifier qu'Alice est bien Alice, il lui suffit alors déchiffrer le certificat en lui appliquant la clé publique de Théo et de vérifier que le résultat correspond à la clé fournie par Alice :
+$$ K_{\text{Theo}}^{\text{pub}}.S = K_{\text{Theo}}^{\text{pub}}.K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub} = K_{\text{Alice}}^\text{pub} $$</li>
+</ol>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
