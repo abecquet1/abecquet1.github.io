@@ -15560,6 +15560,7 @@ clé retrouvée par Alice : 0{N,Cu~ot_Bk%#+]
 </li>
 <li>Chacun ajoute sa couleur privée au mélange qu'il a reçu et obtient la même couleur finale <code>marron acajou</code>.</li>
 </ol>
+<p><img src="diffie-hellman.jpg" alt="Super schéma récapatulatif 3"></p>
 <blockquote><p>Q5 - Expliquer pourquoi Eve ne peut pas facilement obtenir cette même couleur commune.</p>
 </blockquote>
 <h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>En pratique, on peut utiliser comme fonction de mélange l'exponentiation modulaire, c'est à dire, étant donné un certain module $p\geq 2$ premier :</p>
@@ -15632,6 +15633,7 @@ $$ \forall m \leq n, \text{ } K_{\text{Alice}}^\text{priv}.K_{\text{Alice}}^\tex
 </ol>
 <p>La première permet évidemment de communiquer de manière sûre de Bob vers Alice. Pour communiquer de manière sûre de Alice vers Bob, il suffit que Bob génère ces propres clés RSA $K_{\text{Bob}}^{\text{pub}}$ et $K_{\text{Alice}}^{\text{priv}}$.</p>
 <p>La seconde paraît <em>a priori</em> moins utile puisque tout le monde peut déchiffrer le message. On peut cependant remarquer que lorsqu'Alice chiffre un message, tout utilisateur pouvant déchiffrer celui-ci à l'aide de la clé publique d'Alice est assuré que le chiffrement provient d'elle (elle est la seule à connaître sa clé privée). On appelle cela signer un message, nous en parlerons plus en détail dans la partie suivante.</p>
+<p><img src="rsa.jpg" alt="Super schéma récapitulatif +"></p>
 <h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>Vous avez à votre disposition un module RSA dont voici l'interface :</p>
 <table>
 <thead><tr>
@@ -15692,6 +15694,7 @@ $$ \forall m \leq n, \text{ } K_{\text{Alice}}^\text{priv}.K_{\text{Alice}}^\tex
 <li><p>Bob peut déchiffrer ce certificat signé par Théo à l'aide de la clé publique de celui-ci et vérifier qu'il s'agît bien de la clé publique d'Alice $$K_{\text{Theo}}^\text{pub}(s) = K_{\text{Theo}}^\text{pub}.K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub} = K_{\text{Alice}}^\text{pub}$$</p>
 </li>
 </ol>
+<p><img src="authentification.jpg" alt="Super schéma récapitulatif ++"></p>
 <p>Cette procédure se retrouve dans la vie courante. Lorsqu'on veut s'assurer de l'identité de quelqu'un, on lui demande généralement de présenter des documents officiels (carte d'identité, passeport). Ces documents sont produits par une autorité de confiance (ici une administration d'état). Ainsi, pour s'identifier auprès de Bob :</p>
 <ol>
 <li>Alice se présente ou s'est préalablement présentée à la préfecture qui vérifie son identité.</li>
