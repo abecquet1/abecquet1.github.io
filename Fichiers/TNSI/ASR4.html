@@ -15392,19 +15392,16 @@ b&#39;coucou les amis&#39;
 </tbody>
 </table>
 <ol>
-<li>Alice génère N lignes de la forme <code>"identifiant : &lt;identifiant&gt;, cle &lt;grande_cle&gt;"</code>, les encode et les chiffre avec la <code>petite_cle</code> correspondante (ici avec un chiffrement XOR). Elle concatène ses lignes et les sauvegarde dans un fichier chiffré.</li>
-</ol>
-<ol>
-<li>Alice envoie le fichier chiffré à Bob. </li>
-</ol>
-<ol>
-<li>Bob choisit une ligne au hasard et casse le chiffrement de cette ligne par force brute (c'est à dire qu'il essaie toutes les combinaisons possibles de <code>petite_clé</code> dans le but d'obtenir un message commençant par <code>"identifiant : ..."</code>)</li>
-</ol>
-<ol>
-<li>Bob envoie à Alice et en clair l'<code>identifiant</code> de la ligne.</li>
-</ol>
-<ol>
-<li>Alice et Bob peuvent communiquer avec la <code>grande_clé</code> correspondante (Alice retrouvant la clé à l'aide de son identifiant).</li>
+<li><p>Alice génère N lignes de la forme <code>"identifiant : &lt;identifiant&gt;, cle &lt;grande_cle&gt;"</code>, les encode et les chiffre avec la <code>petite_cle</code> correspondante (ici avec un chiffrement XOR). Elle concatène ses lignes et les sauvegarde dans un fichier chiffré.</p>
+</li>
+<li><p>Alice envoie le fichier chiffré à Bob.</p>
+</li>
+<li><p>Bob choisit une ligne au hasard et casse le chiffrement de cette ligne par force brute (c'est à dire qu'il essaie toutes les combinaisons possibles de <code>petite_clé</code> dans le but d'obtenir un message commençant par <code>"identifiant : ..."</code>)</p>
+</li>
+<li><p>Bob envoie à Alice et en clair l'<code>identifiant</code> de la ligne.</p>
+</li>
+<li><p>Alice et Bob peuvent communiquer avec la <code>grande_clé</code> correspondante (Alice retrouvant la clé à l'aide de son identifiant).</p>
+</li>
 </ol>
 
 </div>
@@ -15619,23 +15616,23 @@ $$<p>En revanche, il est difficile (on ne sait pas le faire de manière efficace
 <h3 id="3.3---Chiffrement-RSA">3.3 - Chiffrement RSA<a class="anchor-link" href="#3.3---Chiffrement-RSA">&#182;</a></h3><h3 id="Principe">Principe<a class="anchor-link" href="#Principe">&#182;</a></h3><p>Le chiffrement RSA utilise également des propriétés arithmétiques des entiers pour fonctionner. Voici dans les grandes lignes son fonctionnement :</p>
 <ul>
 <li>Alice génère trois nombres, appelés clés RSA : $n$, $e$ et $d$. </li>
-<li>Le couple $(n, e)$ constitue la clé publique de Alice, elle le partage en clair à tout le monde.</li>
-<li>Le couple $(n, d)$ constitue la clé privée d'Alice. Elle le le partage à personne.</li>
+<li>Le couple $K_{\text{Alice}}^{\text{pub}} = (n, e)$ constitue la <strong>clé publique d'Alice</strong>, elle la partage en clair avec tout le monde.</li>
+<li>Le couple $K_{\text{Alice}}^{\text{priv}} = (n, d)$ constitue la <strong>clé privée d'Alice</strong>, elle ne la partage avec personne.</li>
 </ul>
 <p>Ces trois nombres sont liés par la propriété suivante :
 $$ \forall m \leq n,\text{ }(m^e)^d \text{ mod }n = (m^d)^e\text{ mod }n = m $$</p>
-<p>Propriété qu'on peut aussi noter : 
-$$ \forall M\text{ }, K^\text{priv}.K^\text{pub}.M = K^\text{pub}.K^\text{priv}.M = M $$</p>
+<p>Propriété qu'on notera : 
+$$ \forall m \leq n, \text{ } K_{\text{Alice}}^\text{priv}.K_{\text{Alice}}^\text{pub}(m) = K_{\text{Alice}}^\text{pub}.K_{\text{Alice}}^\text{priv}(m) = m $$</p>
 <p>Cette propriété offre deux possibilités très intéressantes :</p>
 <ol>
-<li><p>Bob peut chiffrer un message $M$ à l'aide de la clé publique d'Alice : $M' = K_{\text{Alice}}^\text{pub}.M$. Alice sera la seule personne capable de déchiffrer ce message à l'aide de sa clé privée : $M = K_{\text{Alice}}^\text{priv}.M'$.</p>
+<li><p>Bob peut chiffrer un message $m$ à l'aide de la clé publique d'Alice : $m' = K_{\text{Alice}}^\text{pub}(m)$. Alice sera la seule personne capable de déchiffrer ce message à l'aide de sa clé privée : $m = K_{\text{Alice}}^\text{priv}(m')$.</p>
 </li>
-<li><p>Alice peut chiffrer un message à l'aide de sa clé privée : $M' = K_{\text{Alice}}^\text{priv}.M$. Toute personne pourra déchiffrer ce message à l'aide de la clé publique d'Alice : $M = K_{\text{Alice}}^\text{pub}.M'$.</p>
+<li><p>Alice peut chiffrer un message à l'aide de sa clé privée : $m' = K_{\text{Alice}}^\text{priv}(m)$. Toute personne pourra déchiffrer ce message à l'aide de la clé publique d'Alice : $m = K_{\text{Alice}}^\text{pub}(m')$.</p>
 </li>
 </ol>
-<p>La première permet évidemment de communiquer de manière sûre de Bob vers Alice. Pour communiquer de manière sûre de Alice vers Bob, il suffit que Bob génère ces propres clés RSA.</p>
-<p>La seconde paraît moins utile puisque tout le monde peut déchiffrer le message. On peut cependant en tirer profit en remarquant que seule Alice peut envoyer un message, par exemple <code>"coucou"</code>, correctement chiffré par cette méthode. Toute personne pouvant déchiffrer le message <code>"coucou"</code> à l'aide de la clé publique l'Alice est assuré qu'il a effectivement affaire à Alice. C'est le principe des certificats que nous allons voir dans la partie suivante.</p>
-<h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>On vous met à disposition un module RSA dont voici l'interface :</p>
+<p>La première permet évidemment de communiquer de manière sûre de Bob vers Alice. Pour communiquer de manière sûre de Alice vers Bob, il suffit que Bob génère ces propres clés RSA $K_{\text{Bob}}^{\text{pub}}$ et $K_{\text{Alice}}^{\text{priv}}$.</p>
+<p>La seconde paraît <em>a priori</em> moins utile puisque tout le monde peut déchiffrer le message. On peut cependant remarquer que lorsqu'Alice chiffre un message, tout utilisateur pouvant déchiffrer celui-ci à l'aide de la clé publique d'Alice est assuré que le chiffrement provient d'elle (elle est la seule à connaître sa clé privée). On appelle cela signer un message, nous en parlerons plus en détail dans la partie suivante.</p>
+<h3 id="Impl%C3%A9mentation">Impl&#233;mentation<a class="anchor-link" href="#Impl%C3%A9mentation">&#182;</a></h3><p>Vous avez à votre disposition un module RSA dont voici l'interface :</p>
 <table>
 <thead><tr>
 <th>fonction</th>
@@ -15665,41 +15662,48 @@ $$ \forall M\text{ }, K^\text{priv}.K^\text{pub}.M = K^\text{pub}.K^\text{priv}.
 </tr>
 </tbody>
 </table>
-<blockquote><p>Q7.a - Téléchargez le module RSA et importez-le dans un programme Python.</p>
-<p>Q7.b - Générez des clés $n$, $e$, $d$ puis sauvegardez-les dans deux fichiers <code>toto_pubkey.rsa</code> et <code>toto_privkey.rsa</code> (remplacez <code>toto</code> par votre prénom...) contenant les clés publiques $(n,e)$ et privées $(n,d)$.</p>
+<blockquote><p>Q7.a - Téléchargez le module et importez-le dans un programme Python.</p>
+<p>Q7.b - Générez des clés $n_A$, $e_A$, $d_A$ puis sauvegardez-les dans deux fichiers <code>toto_pubkey.rsa</code> et <code>toto_privkey.rsa</code> (remplacez <code>toto</code> par votre prénom...) contenant les clés publiques $(n_A,e_A)$ et privées $(n_A,d_A)$.</p>
 <p>Q7.c - Partagez votre fichier de clé publique <code>toto_pubkey.rsa</code> sur le canal public. Tout le monde peut maintenant vous envoyer des messages chiffrés.</p>
 <p>Q7.d -  Téléchargez le fichier de clé publique de votre binome et importer la clé $(n_{B}, e_{B})$ dans un programme Python.  Vous pouvez maintenant envoyer des message chiffrés à votre binome.</p>
 </blockquote>
-<p>En réalité, le chiffrement RSA est trop lent pour servir de chiffrement pour être utilisé pour chiffrer un grand flux de données (discussion, vocale, vidéo, stream, remote play, etc.).</p>
-<p>Sa sureté et sa capacité à générer des certificats d'authentification en font cependant un excellent moyen d'échanger la clé commune d'une méthode de chiffrement symétrique (plus rapide).</p>
+<p>En réalité, le chiffrement RSA est trop lent pour être utilisé afin de chiffrer un grand flux de données (discussion, vocale, vidéo, stream, remote play, etc.).</p>
+<p>Sa sureté et sa capacité à signer des messages en font cependant un excellent moyen d'échanger la clé commune d'une méthode de chiffrement symétrique (plus rapide).</p>
 <blockquote><p>Q8.a - Comment Alice et Bob peuvent utiliser RSA pour se mettre d'accord sur une clé de chiffrement XOR ?</p>
 <p>Q8.b - Appliquer cette méthode avec votre binome.</p>
 </blockquote>
-<h2 id="4---Authentification">4 - Authentification<a class="anchor-link" href="#4---Authentification">&#182;</a></h2><p>Comme expliqué précédemment, le chiffrement RSA permet d'assurer qu'un message donné provient bien d'une personne ayant généré une certaine clé publique. Si c'est bien Alice qui a généré une clé, il lui suffit d'envoyer un message crypté pour prouver son identité.</p>
-<p>En revanche, comment s'assurer que la clé publique dont on se sert a bien été générée par Alice ?</p>
-<p>On utilise pour cela une troisième personne Théo, considérée comme étant de confiance et pouvant attester de l'identité d'Alice. La méthode est la suivante :</p>
+<h2 id="4---Authentification">4 - Authentification<a class="anchor-link" href="#4---Authentification">&#182;</a></h2><h3 id="4.1---L'attaque-de-l'homme-du-milieu">4.1 - L'attaque de l'homme du milieu<a class="anchor-link" href="#4.1---L'attaque-de-l'homme-du-milieu">&#182;</a></h3><p>Considérons la procédure suivante :</p>
 <ol>
-<li>Théo génère ses clés $(n_T, e_T, d_T)$ et partage sa clé publique $(n_T, e_T)$. </li>
-<li>Théo génère un certificat $S = K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub}$ à Alice en chiffrant la clé publique d'Alice avec sa propre clé privée. </li>
-<li>Si Bob veut vérifier qu'Alice est bien Alice, il lui suffit alors déchiffrer le certificat en lui appliquant la clé publique de Théo et de vérifier que le résultat correspond à la clé fournie par Alice :
-$$ K_{\text{Theo}}^{\text{pub}}.S = K_{\text{Theo}}^{\text{pub}}.K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub} = K_{\text{Alice}}^\text{pub} $$</li>
+<li>Alice et Bob génèrent des clés RSA et se les partagent.</li>
+<li>Grâce au chiffrement RSA, ils s'échangent de manière sécurisée un fichier contenant une clé de chiffrement xor.</li>
+<li>Grâce à cette clé, ils communiquent de manière rapide et sécurisée. </li>
 </ol>
+<p>Une fois l'échange de clé effectué, Alice et Bob peuvent considérer que leur discussion est sécurisée. Cependant, on peut imaginer qu'Eve (qui veut intercepter la conversation entre les deux autres) se fasse passer lors de l'étape 1 passer pour Alice et / ou Bob. On appelle cela l'<strong>attaque de l'homme du milieu</strong>, plus de détail sur la <a href="https://fr.wikipedia.org/wiki/Attaque_de_l%27homme_du_milieu">page wikipédia</a>.</p>
+<p>Afin de contrer cette attaque, c'est à dire pour Alice et Bob de s'assurer qu'ils ont bien affaire l'un à l'autre on utilise les signatures RSA d'une troisière personne, dite <strong>tiers de confiance</strong>.</p>
+<h3 id="4.2---Tiers-de-confiance-et-certificats-d'authentifications">4.2 - Tiers de confiance et certificats d'authentifications<a class="anchor-link" href="#4.2---Tiers-de-confiance-et-certificats-d'authentifications">&#182;</a></h3><p>Plaçons nous du point de vue de Bob voulant s'assurer de l'identité d'Alice.</p>
+<p>Plutôt que de se fier directement à la clé publique d'Ailce, Bob va passer par un tiers de confiance que l'on nommera Théo. Bob est sûr de l'identité de Théo et Théo est capable de s'assurer de l'identité de ses interloculteurs (par exemple en exigeant de rencontrer physiquement ceux-ci, en leur faisant passer un questionnaire, etc). L'échange de clé RSA se déroule alors de la manière suivante.</p>
+<ol>
+<li><p>Alice s'identifie ou s'est préalablement identifiée auprès de Théo.</p>
+</li>
+<li><p>Théo fournit à Alice un <strong>certificat d'authentification</strong> $s = K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub}$ à Alice en signant la clé publique d'Alice avec sa propre clé privée.</p>
+</li>
+<li><p>Alice fournit à Bob ce certificat.</p>
+</li>
+<li><p>Bob peut déchiffrer ce certificat signé par Théo à l'aide de la clé publique de celui-ci et vérifier qu'il s'agît bien de la clé publique d'Alice $$K_{\text{Theo}}^\text{pub}(s) = K_{\text{Theo}}^\text{pub}.K_{\text{Theo}}^\text{priv}.K_{\text{Alice}}^\text{pub} = K_{\text{Alice}}^\text{pub}$$</p>
+</li>
+</ol>
+<p>Cette procédure se retrouve dans la vie courante. Lorsqu'on veut s'assurer de l'identité de quelqu'un, on lui demande généralement de présenter des documents officiels (carte d'identité, passeport). Ces documents sont produits par une autorité de confiance (ici une administration d'état). Ainsi, pour s'identifier auprès de Bob :</p>
+<ol>
+<li>Alice se présente ou s'est préalablement présentée à la préfecture qui vérifie son identité.</li>
+<li>La préfecture délivre à Alice une carte d'identité.</li>
+<li>Pour prouver à Bob son identité, Alice lui montre sa carte.</li>
+<li>Bob peut constater que la photo de la carte correspond au visage d'Alice. </li>
+</ol>
+<p>Dans le domaine du web, le rôle de Théo (ou de la préfecture) est joué par une <strong>autorité de certification</strong>. La comission européenne publie et tient à jour une <a href="https://esignature.ec.europa.eu/efda/tl-browser/#/screen/home">liste de telles autoritées</a>, jugées de confiance.</p>
+<blockquote><p>Q1 - Connectez-vous à un site web utilisant HTTPS puis (en cliquant sur le verrous à gauche de l'URL), trouver le certificat du site ainsi que l'autorité de certification l'ayant délivré.</p>
+</blockquote>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
