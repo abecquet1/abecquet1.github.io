@@ -83,6 +83,26 @@
 
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            //Haut, haut, bas, bas, gauche, droite, gauche, droite, B, A
+            var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+                n = 0;
+            $(document).keydown(function (e) {
+                if (e.keyCode === k[n++]) {
+                    if (n === k.length) {
+                        alert("Konami !!!");
+                        n = 0;
+                        return false;
+                    }
+                } else {
+                    n = 0;
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
